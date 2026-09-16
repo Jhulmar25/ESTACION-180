@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Promociones especiales de Estación 180. Encuentra packs y ofertas en bebidas con delivery 24/7."
+    >
+
+    <meta
+        name="theme-color"
+        content="#050505"
+    >
+
+    <title>
+        Promociones | Estación 180
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="promociones.css"
+    >
+
+</head>
+
+
+<body class="promotions-page">
+
+
+    <!-- =====================================================
+         VALIDACIÓN DE EDAD
+    ====================================================== -->
+
+    <div
+        class="age-modal"
+        id="ageModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ageTitle"
+    >
+
+        <div class="age-box">
+
+            <div class="age-badge">
+                +18
+            </div>
+
+            <span class="age-label">
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h2 id="ageTitle">
+                ¿Eres mayor de edad?
+            </h2>
+
+            <div class="age-buttons">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="confirmAge"
+                >
+                    Sí, soy mayor de 18
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="denyAge"
+                >
+                    No
+                </button>
+
+            </div>
+
+            <small class="age-warning">
+                Tomar bebidas alcohólicas en exceso
+                es dañino para la salud.
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+
+    <div class="topbar">
+
+        <div class="topbar-content">
+
+            <span>
+                🕐 DELIVERY DE LICORES 24/7
+            </span>
+
+            <span class="topbar-divider">
+                •
+            </span>
+
+            <span>
+                PEDIDOS RÁPIDOS Y SEGUROS
+            </span>
+
+            <span class="topbar-divider">
+                •
+            </span>
+
+            <span>
+                EXCLUSIVO PARA MAYORES DE 18 AÑOS
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="header"
+        id="header"
+    >
+
+        <div class="container nav">
+
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="Estación 180 - Inicio"
+                data-direct-nav
+            >
+
+                <div class="brand-text">
+
+                    <strong>
+                        ESTACIÓN 180
+                    </strong>
+
+                    <small>
+                        LICORERÍA · DELIVERY 24/7
+                    </small>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- MENÚ DESKTOP -->
+
+            <nav
+                class="nav-links"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="../index.html"
+                    data-page="inicio"
+                    data-direct-nav
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="../productos/productos.html"
+                    data-page="productos"
+                    data-direct-nav
+                >
+                    Productos
+                </a>
+
+                <a
+                    href="promociones.html"
+                    class="active"
+                    data-page="promociones"
+                    data-direct-nav
+                >
+                    Promociones
+                </a>
+
+                <a
+                    href="../como-pedir/pedir.html"
+                    data-page="como-pedir"
+                    data-direct-nav
+                >
+                    Cómo pedir
+                </a>
+
+                <a
+                    href="../contacto/contacto.html"
+                    data-page="contacto"
+                    data-direct-nav
+                >
+                    Contacto
+                </a>
+
+            </nav>
+
+
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="header-cart"
+                    id="cartButton"
+                    aria-label="Abrir carrito"
+                >
+
+                    <span class="cart-icon">
+                        🛒
+                    </span>
+
+                    <span class="cart-text">
+                        Mi pedido
+                    </span>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MENÚ MÓVIL -->
+
+        <nav
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Menú móvil"
+        >
+
+            <a
+                href="../index.html"
+                data-page="inicio"
+                data-direct-nav
+            >
+                Inicio
+            </a>
+
+            <a
+                href="../productos/productos.html"
+                data-page="productos"
+                data-direct-nav
+            >
+                Productos
+            </a>
+
+            <a
+                href="promociones.html"
+                class="active"
+                data-page="promociones"
+                data-direct-nav
+            >
+                Promociones
+            </a>
+
+            <a
+                href="../como-pedir/pedir.html"
+                data-page="como-pedir"
+                data-direct-nav
+            >
+                Cómo pedir
+            </a>
+
+            <a
+                href="../contacto/contacto.html"
+                data-page="contacto"
+                data-direct-nav
+            >
+                Contacto
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO PROMOCIONES
+        ================================================== -->
+
+        <section class="promotions-hero">
+
+
+            <div
+                class="
+                    promotions-glow
+                    promotions-glow-blue
+                "
+            ></div>
+
+
+            <div
+                class="
+                    promotions-glow
+                    promotions-glow-lime
+                "
+            ></div>
+
+
+            <div
+                class="
+                    container
+                    promotions-hero-content
+                "
+            >
+
+                <span class="promotions-kicker">
+                    ESTACIÓN 180 · OFERTAS
+                </span>
+
+
+                <h1>
+
+                    Promociones
+
+                    <span>
+                        especiales.
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Descubre nuestros packs y promociones
+                    disponibles.
+
+                    Agrégalos directamente a tu carrito y
+                    coordina tu pedido de manera rápida.
+
+                </p>
+
+
+                <div class="promotions-info">
+
+                    <div class="promotions-info-item">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Delivery 24/7
+
+                    </div>
+
+
+                    <div class="promotions-info-item">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Ofertas especiales
+
+                    </div>
+
+
+                    <div class="promotions-info-item">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Pedido rápido
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LISTADO DE PROMOCIONES
+        ================================================== -->
+
+        <section class="promotions-section">
+
+            <div class="container">
+
+
+                <div class="promotions-heading">
+
+                    <div>
+
+                        <span class="promotions-kicker">
+                            OFERTAS DISPONIBLES
+                        </span>
+
+                        <h2>
+                            Elige tu promoción.
+                        </h2>
+
+                        <p>
+
+                            Agrega una promoción a tu pedido.
+                            Puedes modificar la cantidad desde
+                            el carrito.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="promotions-counter">
+
+                        <span id="promotionCount">
+                            3
+                        </span>
+
+                        promociones
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GRID -->
+
+                <div class="promotions-grid">
+
+
+                    <!-- PROMOCIÓN 01 -->
+
+                    <article
+                        class="promotion-card"
+                        data-id="PROMO01"
+                        data-name="PACK JW RED"
+                        data-price="72"
+                        data-image="../imagenes/01.jpeg"
+                    >
+
+                        <div class="promotion-image-wrapper">
+
+                            <img
+                                src="../imagenes/01.jpeg"
+                                alt="PACK JW RED"
+                                class="promotion-image"
+                            >
+
+                            <span class="promotion-badge">
+                                PROMOCIÓN
+                            </span>
+
+                        </div>
+
+
+                        <div class="promotion-card-footer">
+
+                            <div class="promotion-info">
+
+                                <span class="promotion-code">
+                                    PROMO 01
+                                </span>
+
+                                <h3>
+                                    PACK JW RED
+                                </h3>
+
+                            </div>
+
+
+                            <div class="promotion-price-row">
+
+                                <span>
+                                    PRECIO
+                                </span>
+
+                                <strong>
+                                    S/ 72.00
+                                </strong>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="promotion-add-cart"
+                                data-id="PROMO01"
+                            >
+
+                                <span>
+                                    Agregar al carrito
+                                </span>
+
+                                <span>
+                                    🛒
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROMOCIÓN 02 -->
+
+                    <article
+                        class="promotion-card"
+                        data-id="PROMO02"
+                        data-name="PACK 4 GALLOS"
+                        data-price="60"
+                        data-image="../imagenes/02.jpeg"
+                    >
+
+                        <div class="promotion-image-wrapper">
+
+                            <img
+                                src="../imagenes/02.jpeg"
+                                alt="Promoción 02 de Estación 180"
+                                class="promotion-image"
+                            >
+
+                            <span class="promotion-badge">
+                                PROMOCIÓN
+                            </span>
+
+                        </div>
+
+
+                        <div class="promotion-card-footer">
+
+                            <div class="promotion-info">
+
+                                <span class="promotion-code">
+                                    PROMO 02
+                                </span>
+
+                                <h3>
+                                    PACK 4 GALLOS
+                                </h3>
+
+                            </div>
+
+
+                            <div class="promotion-price-row">
+
+                                <span>
+                                    PRECIO
+                                </span>
+
+                                <strong>
+                                    S/ 60.00
+                                </strong>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="promotion-add-cart"
+                                data-id="PROMO02"
+                            >
+
+                                <span>
+                                    Agregar al carrito
+                                </span>
+
+                                <span>
+                                    🛒
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROMOCIÓN 03 -->
+
+                    <article
+                        class="promotion-card"
+                        data-id="PROMO03"
+                        data-name="PACK FLOR DE CAÑA 4 AÑOS"
+                        data-price="63"
+                        data-image="../imagenes/03.jpeg"
+                    >
+
+                        <div class="promotion-image-wrapper">
+
+                            <img
+                                src="../imagenes/03.jpeg"
+                                alt="Promoción 03 de Estación 180"
+                                class="promotion-image"
+                            >
+
+                            <span class="promotion-badge">
+                                PROMOCIÓN
+                            </span>
+
+                        </div>
+
+
+                        <div class="promotion-card-footer">
+
+                            <div class="promotion-info">
+
+                                <span class="promotion-code">
+                                    PROMO 03
+                                </span>
+
+                                <h3>
+                                    PACK FLOR DE CAÑA 4 AÑOS
+                                </h3>
+
+                            </div>
+
+
+                            <div class="promotion-price-row">
+
+                                <span>
+                                    PRECIO
+                                </span>
+
+                                <strong>
+                                    S/ 63.00
+                                </strong>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="promotion-add-cart"
+                                data-id="PROMO03"
+                            >
+
+                                <span>
+                                    Agregar al carrito
+                                </span>
+
+                                <span>
+                                    🛒
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         CARRITO
+    ====================================================== -->
+
+    <aside
+        class="cart-sidebar"
+        id="cartSidebar"
+        aria-hidden="true"
+    >
+
+        <div class="cart-header">
+
+            <div>
+
+                <span class="cart-eyebrow">
+                    ESTACIÓN 180
+                </span>
+
+                <h2>
+                    Mi pedido
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="cart-close"
+                id="closeCart"
+                aria-label="Cerrar carrito"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+            <div class="empty-cart">
+
+                <div class="empty-cart-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Tu pedido está vacío
+                </h3>
+
+                <p>
+
+                    Las promociones o productos
+                    que agregues aparecerán aquí.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <strong id="cartTotal">
+                    S/ 0.00
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn btn-primary cart-checkout"
+                id="cartCheckout"
+                disabled
+            >
+                Continuar pedido
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         OVERLAY
+    ====================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         WHATSAPP
+    ====================================================== -->
+
+    <button
+        type="button"
+        class="floating-whatsapp"
+        id="floatingWhatsapp"
+        aria-label="Contactar por WhatsApp"
+    >
+
+        <svg
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+        >
+
+            <path
+                fill="currentColor"
+                d="M19.11 17.33c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"
+            />
+
+            <path
+                fill="currentColor"
+                d="M16.03 3C8.84 3 3 8.75 3 15.84c0 2.26.6 4.47 1.74 6.41L3 29l6.95-1.8a13.14 13.14 0 0 0 6.07 1.48h.01C23.21 28.68 29 22.92 29 15.84S23.21 3 16.03 3zm0 23.51h-.01a10.98 10.98 0 0 1-5.59-1.52l-.4-.24-4.12 1.07 1.1-4-.26-.41a10.66 10.66 0 0 1-1.67-5.73c0-5.9 4.91-10.7 10.95-10.7s10.94 4.8 10.94 10.7-4.91 10.83-10.94 10.83z"
+            />
+
+        </svg>
+
+
+        <span class="floating-whatsapp-text">
+            WhatsApp
+        </span>
+
+    </button>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+
+                <div class="footer-brand">
+
+                    <a
+                        href="../index.html"
+                        class="footer-logo-wrap"
+                        aria-label="Estación 180 - Inicio"
+                        data-direct-nav
+                    >
+
+                        <img
+                            src="../imagenes/logo.jpeg"
+                            alt="Logo Estación 180"
+                            class="footer-logo"
+                        >
+
+                        <div class="footer-brand-info">
+
+                            <strong>
+                                ESTACIÓN 180
+                            </strong>
+
+                            <span>
+                                LICORERÍA · DELIVERY 24/7
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <p class="footer-description">
+
+                        Tu licorería online para encontrar
+                        bebidas, promociones y complementos
+                        con atención rápida y delivery
+                        las 24 horas.
+
+                    </p>
+
+
+                    <div class="footer-slogan">
+
+                        Pide rápido. Recibe fácil.
+                        Disfruta más.
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <span class="footer-title">
+                        NAVEGACIÓN
+                    </span>
+
+                    <nav class="footer-links">
+
+                        <a
+                            href="../index.html"
+                            data-direct-nav
+                        >
+                            Inicio
+                        </a>
+
+                        <a
+                            href="../productos/productos.html"
+                            data-direct-nav
+                        >
+                            Productos
+                        </a>
+
+                        <a
+                            href="promociones.html"
+                            data-direct-nav
+                        >
+                            Promociones
+                        </a>
+
+                        <a
+                            href="../como-pedir/pedir.html"
+                            data-direct-nav
+                        >
+                            Cómo pedir
+                        </a>
+
+                        <a
+                            href="../contacto/contacto.html"
+                            data-direct-nav
+                        >
+                            Contacto
+                        </a>
+
+                    </nav>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <span class="footer-title">
+                        NUESTRO SERVICIO
+                    </span>
+
+                    <div class="footer-service">
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Atención las 24 horas
+                            </span>
+
+                        </div>
+
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Delivery coordinado
+                            </span>
+
+                        </div>
+
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Pedidos rápidos
+                            </span>
+
+                        </div>
+
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Atención personalizada
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    class="
+                        footer-column
+                        footer-responsible
+                    "
+                >
+
+                    <span class="footer-title">
+                        CONSUMO RESPONSABLE
+                    </span>
+
+
+                    <div class="footer-age-box">
+
+                        <span class="footer-age">
+                            +18
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Venta exclusiva para adultos
+                            </strong>
+
+                            <p>
+
+                                La venta de bebidas alcohólicas
+                                está dirigida exclusivamente
+                                a personas mayores de 18 años.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="footer-warning">
+
+                        Tomar bebidas alcohólicas en exceso
+                        es dañino para la salud.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-divider"></div>
+
+
+
+            <div class="footer-bottom">
+
+                <div class="footer-copyright">
+
+                    <span>
+                        © 2026 Estación 180
+                    </span>
+
+                    <small>
+                        Todos los derechos reservados.
+                    </small>
+
+                </div>
+
+
+                <div class="footer-legal">
+
+                    <button
+                        type="button"
+                        class="footer-legal-link"
+                    >
+                        Términos y condiciones
+                    </button>
+
+                    <span class="footer-dot">
+                        •
+                    </span>
+
+                    <button
+                        type="button"
+                        class="footer-legal-link"
+                    >
+                        Política de privacidad
+                    </button>
+
+                </div>
+
+
+                <div class="footer-status">
+
+                    <span class="footer-status-dot"></span>
+
+                    Atención disponible 24/7
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../app.js"></script>
+
+    <script src="promociones.js"></script>
+
+
+    <!-- =====================================================
+         CORRECCIÓN DE NAVEGACIÓN ENTRE PÁGINAS
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                const link =
+                    event.target.closest(
+                        "a[data-direct-nav]"
+                    );
+
+                if (!link) {
+                    return;
+                }
+
+                const href =
+                    link.getAttribute("href");
+
+                if (
+                    !href ||
+                    href === "#"
+                ) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                event.stopImmediatePropagation();
+
+                window.location.href =
+                    href;
+
+            },
+            true
+        );
+
+
+
+        /* =====================================================
+           SINCRONIZAR CARRITO ANTES DE CONTINUAR PEDIDO
+        ====================================================== */
+
+        const checkoutButton =
+            document.getElementById(
+                "cartCheckout"
+            );
+
+
+        if (checkoutButton) {
+
+            checkoutButton.addEventListener(
+                "click",
+                function () {
+
+                    try {
+
+                        const storedCart =
+                            localStorage.getItem(
+                                "estacion180-cart"
+                            );
+
+
+                        if (
+                            typeof cart !== "undefined"
+                        ) {
+
+                            cart =
+                                storedCart
+                                    ? JSON.parse(storedCart)
+                                    : [];
+
+                        }
+
+                    } catch (error) {
+
+                        console.error(
+                            "Error al sincronizar el carrito:",
+                            error
+                        );
+
+                    }
+
+                },
+                true
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

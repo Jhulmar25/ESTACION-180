@@ -1,0 +1,3981 @@
+/* ============================================================
+   ESTACIÓN 180
+   STYLES.CSS
+   PRODUCCIÓN
+   ============================================================ */
+
+
+/* ============================================================
+   01. VARIABLES
+   ============================================================ */
+
+:root {
+
+    --bg: #050505;
+    --bg-deep: #020203;
+    --bg-soft: #090b0f;
+
+    --surface: #0d0f14;
+    --surface-2: #11141a;
+    --surface-3: #171a21;
+
+    --text: #f7f8fa;
+    --text-soft: #d6d8dd;
+    --muted: #979ca7;
+    --muted-2: #686d77;
+
+    --lime: #d7ff00;
+    --lime-hover: #c7ed00;
+    --lime-soft: rgba(215, 255, 0, 0.08);
+    --lime-border: rgba(215, 255, 0, 0.25);
+
+    --blue: #1769ff;
+    --blue-soft: rgba(23, 105, 255, 0.12);
+
+    --whatsapp: #25d366;
+    --whatsapp-hover: #20bd5a;
+
+    --danger: #ff5757;
+
+    --line: rgba(255, 255, 255, 0.09);
+    --line-strong: rgba(255, 255, 255, 0.15);
+
+    --container: 1200px;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+
+    --shadow-sm:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    --shadow-md:
+        0 20px 55px rgba(0, 0, 0, 0.38);
+
+    --shadow-lg:
+        0 32px 90px rgba(0, 0, 0, 0.52);
+
+    --transition:
+        220ms cubic-bezier(.2, .7, .2, 1);
+
+}
+
+
+/* ============================================================
+   02. RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+    color-scheme: dark;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-width: 320px;
+
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(23, 105, 255, 0.10),
+            transparent 34rem
+        ),
+        radial-gradient(
+            circle at 92% 6%,
+            rgba(215, 255, 0, 0.06),
+            transparent 30rem
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    overflow-x: hidden;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+body.modal-open,
+body.cart-open {
+
+    overflow: hidden;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+img,
+svg {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p {
+
+    margin-top: 0;
+
+}
+
+
+::selection {
+
+    background: var(--lime);
+
+    color: #050505;
+
+}
+
+
+/* ============================================================
+   03. ACCESIBILIDAD
+   ============================================================ */
+
+a:focus-visible,
+button:focus-visible {
+
+    outline:
+        3px solid rgba(215, 255, 0, 0.72);
+
+    outline-offset: 4px;
+
+}
+
+
+/* ============================================================
+   04. CONTENEDOR GLOBAL
+   ============================================================ */
+
+.container {
+
+    width:
+        min(
+            var(--container),
+            calc(100% - 48px)
+        );
+
+    margin-inline: auto;
+
+}
+
+
+/* ============================================================
+   05. TOPBAR
+   ============================================================ */
+
+.topbar {
+
+    position: relative;
+
+    z-index: 80;
+
+    min-height: 34px;
+
+    padding:
+        7px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--lime);
+
+    color: #050505;
+
+}
+
+
+.topbar-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    text-align: center;
+
+    font-size: 0.73rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.045em;
+
+}
+
+
+.topbar-divider {
+
+    opacity: 0.45;
+
+}
+
+
+/* ============================================================
+   06. HEADER
+   ============================================================ */
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 70;
+
+    border-bottom:
+        1px solid var(--line);
+
+    background:
+        rgba(5, 5, 5, 0.86);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    transition:
+        background var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+
+}
+
+
+.header.header-scrolled {
+
+    background:
+        rgba(5, 5, 5, 0.96);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 16px 40px
+        rgba(0, 0, 0, 0.28);
+
+}
+
+
+/* ============================================================
+   07. NAV
+   ============================================================ */
+
+.nav {
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 28px;
+
+}
+
+
+/* ============================================================
+   08. MARCA
+   ============================================================ */
+
+.brand {
+
+    min-width: 190px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.1;
+
+}
+
+
+.brand-text strong {
+
+    color: var(--text);
+
+    font-size: 1rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.025em;
+
+    white-space: nowrap;
+
+}
+
+
+.brand-text small {
+
+    margin-top: 6px;
+
+    color: var(--lime);
+
+    font-size: 0.62rem;
+
+    font-weight: 850;
+
+    letter-spacing: 0.055em;
+
+    white-space: nowrap;
+
+}
+
+
+/* ============================================================
+   09. LINKS HEADER
+   ============================================================ */
+
+.nav-links {
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.nav-links a {
+
+    position: relative;
+
+    padding: 9px 0;
+
+    color: #c9ccd2;
+
+    font-size: 0.87rem;
+
+    font-weight: 760;
+
+    transition:
+        color var(--transition);
+
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color: var(--lime);
+
+}
+
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--lime);
+
+    transform:
+        scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform var(--transition);
+
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+    transform:
+        scaleX(1);
+
+}
+
+
+/* ============================================================
+   10. ACCIONES HEADER
+   ============================================================ */
+
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+/* ============================================================
+   11. BOTÓN CARRITO
+   ============================================================ */
+
+.header-cart {
+
+    position: relative;
+
+    min-height: 46px;
+
+    padding:
+        0 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border:
+        1px solid var(--lime-border);
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(215, 255, 0, 0.07),
+            rgba(215, 255, 0, 0.025)
+        );
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-weight: 850;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.header-cart:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color: var(--lime);
+
+    background: var(--lime);
+
+    color: #050505;
+
+    box-shadow:
+        0 12px 28px
+        rgba(215, 255, 0, 0.12);
+
+}
+
+
+.cart-icon {
+
+    font-size: 1rem;
+
+}
+
+
+.cart-text {
+
+    font-size: 0.8rem;
+
+}
+
+
+.cart-count {
+
+    min-width: 22px;
+    height: 22px;
+
+    padding:
+        0 6px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 999px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-size: 0.67rem;
+
+    font-weight: 950;
+
+    line-height: 1;
+
+}
+
+
+/* ============================================================
+   12. HAMBURGUESA
+   ============================================================ */
+
+.mobile-menu-button {
+
+    position: relative;
+
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 12px;
+
+    background:
+        var(--surface-2);
+
+    cursor: pointer;
+
+}
+
+
+.mobile-menu-button span {
+
+    position: absolute;
+
+    left: 11px;
+
+    width: 20px;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--text);
+
+    transition:
+        top var(--transition),
+        transform var(--transition),
+        opacity var(--transition);
+
+}
+
+
+.mobile-menu-button span:nth-child(1) {
+
+    top: 13px;
+
+}
+
+
+.mobile-menu-button span:nth-child(2) {
+
+    top: 20px;
+
+}
+
+
+.mobile-menu-button span:nth-child(3) {
+
+    top: 27px;
+
+}
+
+
+.mobile-menu-button.active span:nth-child(1) {
+
+    top: 20px;
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+.mobile-menu-button.active span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+
+.mobile-menu-button.active span:nth-child(3) {
+
+    top: 20px;
+
+    transform:
+        rotate(-45deg);
+
+}
+
+
+/* ============================================================
+   13. MENÚ MÓVIL
+   ============================================================ */
+
+.mobile-menu {
+
+    display: none;
+
+    border-top:
+        1px solid var(--line);
+
+    background:
+        rgba(5, 5, 5, 0.98);
+
+}
+
+
+.mobile-menu.open {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.mobile-menu a {
+
+    padding:
+        16px 5%;
+
+    border-bottom:
+        1px solid var(--line);
+
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+    font-weight: 800;
+
+}
+
+
+.mobile-menu a:hover {
+
+    color: var(--lime);
+
+    background:
+        rgba(215, 255, 0, 0.035);
+
+}
+
+
+/* ============================================================
+   14. BOTONES GENERALES
+   ============================================================ */
+
+.btn {
+
+    min-height: 46px;
+
+    padding:
+        12px 18px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+
+    font-weight: 900;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        color var(--transition),
+        opacity var(--transition);
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.btn:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+.btn:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+
+}
+
+
+.btn-primary {
+
+    background: var(--lime);
+
+    color: #050505;
+
+    box-shadow:
+        0 14px 34px
+        rgba(215, 255, 0, 0.15);
+
+}
+
+
+.btn-primary:hover {
+
+    background: var(--lime-hover);
+
+    box-shadow:
+        0 20px 42px
+        rgba(215, 255, 0, 0.20);
+
+}
+
+
+.btn-secondary {
+
+    border:
+        1px solid var(--line-strong);
+
+    background:
+        var(--surface-3);
+
+    color: white;
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        #20232b;
+
+}
+
+
+.btn-large {
+
+    min-width: 210px;
+
+    min-height: 54px;
+
+    padding:
+        15px 22px;
+
+}
+
+
+/* ============================================================
+   15. HERO
+   ============================================================ */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom:
+        1px solid var(--line);
+
+    isolation: isolate;
+
+}
+
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -3;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 5, 5, 0) 70%,
+            rgba(5, 5, 5, 0.82) 100%
+        );
+
+}
+
+
+.hero-orb {
+
+    position: absolute;
+
+    z-index: -2;
+
+    width: 480px;
+    height: 480px;
+
+    border-radius: 50%;
+
+    filter:
+        blur(120px);
+
+    opacity: 0.13;
+
+    pointer-events: none;
+
+}
+
+
+.hero-orb-blue {
+
+    left: -170px;
+    top: -20px;
+
+    background: var(--blue);
+
+}
+
+
+.hero-orb-lime {
+
+    right: -170px;
+    top: -20px;
+
+    background: var(--lime);
+
+}
+
+
+/* ============================================================
+   16. HERO GRID
+   ============================================================ */
+
+.hero-grid {
+
+    position: relative;
+
+    min-height:
+        clamp(
+            650px,
+            75vh,
+            760px
+        );
+
+    padding:
+        70px 0 78px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.04fr)
+        minmax(380px, 0.96fr);
+
+    align-items: center;
+
+    gap:
+        clamp(
+            44px,
+            6vw,
+            80px
+        );
+
+}
+
+
+/* ============================================================
+   17. HERO CONTENT
+   ============================================================ */
+
+.hero-content {
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        opacity 700ms ease,
+        transform 700ms ease;
+
+}
+
+
+.hero-content.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ============================================================
+   18. HERO BADGE
+   ============================================================ */
+
+.hero-badge {
+
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        9px 13px;
+
+    border:
+        1px solid var(--lime-border);
+
+    border-radius: 999px;
+
+    background:
+        rgba(215, 255, 0, 0.045);
+
+    color: var(--lime);
+
+    font-size: 0.73rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.055em;
+
+    box-shadow:
+        inset 0 0 18px
+        rgba(215, 255, 0, 0.025);
+
+}
+
+
+.hero-badge-dot {
+
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--lime);
+
+    box-shadow:
+        0 0 12px
+        rgba(215, 255, 0, 0.85);
+
+    animation:
+        pulse-dot 2s ease-in-out infinite;
+
+}
+
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 10px
+            rgba(215, 255, 0, 0.8);
+
+    }
+
+    50% {
+
+        opacity: 0.7;
+
+        box-shadow:
+            0 0 20px
+            rgba(215, 255, 0, 0.95);
+
+    }
+
+}
+
+
+/* ============================================================
+   19. HERO H1
+   ============================================================ */
+
+.hero h1 {
+
+    margin:
+        24px 0 22px;
+
+    max-width: 780px;
+
+    color: #f7f7f8;
+
+    font-size:
+        clamp(
+            4rem,
+            6.4vw,
+            7rem
+        );
+
+    font-weight: 900;
+
+    line-height: 0.89;
+
+    letter-spacing: -0.062em;
+
+    text-wrap: balance;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--lime);
+
+    text-shadow:
+        0 0 30px
+        rgba(215, 255, 0, 0.11);
+
+}
+
+
+/* ============================================================
+   20. HERO DESCRIPTION
+   ============================================================ */
+
+.hero-description {
+
+    max-width: 670px;
+
+    margin: 0;
+
+    color: #b8bcc4;
+
+    font-size:
+        clamp(
+            0.98rem,
+            1.1vw,
+            1.08rem
+        );
+
+    line-height: 1.72;
+
+}
+
+
+/* ============================================================
+   21. HERO ACTION
+   ============================================================ */
+
+.hero-actions {
+
+    margin-top: 30px;
+
+}
+
+
+/* ============================================================
+   22. BENEFICIOS HERO
+   ============================================================ */
+
+.hero-points {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap:
+        12px 22px;
+
+}
+
+
+.hero-point {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #d4d6da;
+
+    font-size: 0.87rem;
+
+    font-weight: 760;
+
+}
+
+
+.hero-check {
+
+    width: 20px;
+    height: 20px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(215, 255, 0, 0.07);
+
+    color: var(--lime);
+
+    font-size: 0.75rem;
+
+    font-weight: 950;
+
+}
+
+
+/* ============================================================
+   23. HERO VISUAL
+   ============================================================ */
+
+.hero-visual {
+
+    position: relative;
+
+    width: 100%;
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        opacity 760ms ease 100ms,
+        transform 760ms ease 100ms;
+
+}
+
+
+.hero-visual.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.hero-logo-glow {
+
+    position: absolute;
+
+    inset: 10%;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            from 40deg,
+            rgba(215, 255, 0, 0.3),
+            rgba(23, 105, 255, 0.40),
+            rgba(215, 255, 0, 0.20)
+        );
+
+    filter:
+        blur(75px);
+
+    opacity: 0.66;
+
+    pointer-events: none;
+
+}
+
+
+.hero-logo-card {
+
+    position: relative;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.11);
+
+    border-radius: 30px;
+
+    background: #000;
+
+    box-shadow:
+        0 35px 80px
+        rgba(0, 0, 0, 0.48);
+
+    transition:
+        transform 400ms ease,
+        box-shadow 400ms ease,
+        border-color 400ms ease;
+
+}
+
+
+.hero-logo-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(215, 255, 0, 0.18);
+
+    box-shadow:
+        0 42px 95px
+        rgba(0, 0, 0, 0.58);
+
+}
+
+
+.hero-logo {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+}
+
+
+/* ============================================================
+   24. HOME MENU
+   ============================================================ */
+
+.home-menu {
+
+    position: relative;
+
+    padding:
+        100px 0 110px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(23, 105, 255, 0.08),
+            transparent 30rem
+        ),
+        linear-gradient(
+            180deg,
+            #050505,
+            #08090c
+        );
+
+}
+
+
+/* ============================================================
+   25. HOME MENU HEADING
+   ============================================================ */
+
+.home-menu-heading {
+
+    max-width: 730px;
+
+    margin:
+        0 auto 48px;
+
+    text-align: center;
+
+}
+
+
+.section-kicker {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--lime);
+
+    font-size: 0.72rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.11em;
+
+}
+
+
+.home-menu-heading h2 {
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size:
+        clamp(
+            2.25rem,
+            4.4vw,
+            4.2rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.045em;
+
+}
+
+
+.home-menu-heading p {
+
+    margin:
+        14px 0 0;
+
+    color: var(--muted);
+
+    font-size: 0.98rem;
+
+}
+
+
+/* ============================================================
+   26. HOME GRID
+   ============================================================ */
+
+.home-menu-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+/* ============================================================
+   27. HOME CARD
+   ============================================================ */
+
+.home-menu-card {
+
+    position: relative;
+
+    min-height: 260px;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(18, 20, 27, 0.96),
+            rgba(9, 10, 14, 0.98)
+        );
+
+    color: var(--text);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.18);
+
+    opacity: 0;
+
+    transform:
+        translateY(22px);
+
+    transition:
+        opacity 520ms ease,
+        transform 520ms ease,
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+
+}
+
+
+.home-menu-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(215, 255, 0, 0.055),
+            transparent 40%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity var(--transition);
+
+}
+
+
+.home-menu-card.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.home-menu-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(215, 255, 0, 0.34);
+
+    box-shadow:
+        0 28px 65px
+        rgba(0, 0, 0, 0.32);
+
+}
+
+
+.home-menu-card:hover::before {
+
+    opacity: 1;
+
+}
+
+
+/* ============================================================
+   28. ICONOS HOME
+   ============================================================ */
+
+.home-menu-icon {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 72px;
+    height: 72px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid var(--lime-border);
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(215, 255, 0, 0.10),
+            rgba(23, 105, 255, 0.045)
+        );
+
+    color: var(--lime);
+
+    font-size: 1.8rem;
+
+    font-weight: 950;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+
+}
+
+
+.home-menu-card:hover
+.home-menu-icon {
+
+    transform:
+        scale(1.06);
+
+    border-color: var(--lime);
+
+    background: var(--lime);
+
+    color: #050505;
+
+}
+
+
+/* ============================================================
+   29. TEXTO CARDS
+   ============================================================ */
+
+.home-menu-card h3 {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin:
+        25px 0 9px;
+
+    font-size: 1rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.045em;
+
+}
+
+
+.home-menu-card p {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 210px;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.86rem;
+
+    line-height: 1.62;
+
+}
+
+
+.home-menu-arrow {
+
+    position: absolute;
+
+    right: 24px;
+    bottom: 23px;
+
+    z-index: 1;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(215, 255, 0, 0.06);
+
+    color: var(--lime);
+
+    font-size: 1.35rem;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition);
+
+}
+
+
+.home-menu-card:hover
+.home-menu-arrow {
+
+    transform:
+        translateX(3px);
+
+    background: var(--lime);
+
+    color: #050505;
+
+}
+
+
+/* ============================================================
+   30. MODAL +18
+   ============================================================ */
+
+.age-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    padding: 24px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        rgba(0, 0, 0, 0.92);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+}
+
+
+.age-modal.hidden {
+
+    display: none;
+
+}
+
+
+.age-box {
+
+    position: relative;
+
+    width:
+        min(
+            460px,
+            100%
+        );
+
+    padding:
+        38px 34px 30px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.11);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            165deg,
+            #12151b,
+            #08090c
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 40px 120px
+        rgba(0, 0, 0, 0.7);
+
+}
+
+
+.age-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: 50%;
+    top: -120px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(215, 255, 0, 0.10);
+
+    filter:
+        blur(50px);
+
+    pointer-events: none;
+
+}
+
+
+.age-badge {
+
+    position: relative;
+
+    width: 72px;
+    height: 72px;
+
+    margin:
+        0 auto 19px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--lime);
+
+    color: #050505;
+
+    font-size: 1.45rem;
+
+    font-weight: 1000;
+
+    box-shadow:
+        0 14px 38px
+        rgba(215, 255, 0, 0.18);
+
+}
+
+
+.age-label {
+
+    display: block;
+
+    color: var(--lime);
+
+    font-size: 0.69rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.11em;
+
+}
+
+
+.age-box h2 {
+
+    margin:
+        10px 0 0;
+
+    color: white;
+
+    font-size:
+        clamp(
+            1.8rem,
+            5vw,
+            2.25rem
+        );
+
+    line-height: 1.12;
+
+    letter-spacing: -0.03em;
+
+}
+
+
+.age-buttons {
+
+    margin-top: 26px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 0.6fr;
+
+    gap: 10px;
+
+}
+
+
+.age-warning {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color: #777c85;
+
+    font-size: 0.72rem;
+
+    line-height: 1.55;
+
+}
+
+
+/* ============================================================
+   31. CART SIDEBAR
+   ============================================================ */
+
+.cart-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    z-index: 130;
+
+    width:
+        min(
+            430px,
+            94vw
+        );
+
+    height: 100dvh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-left:
+        1px solid var(--line);
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b0d11,
+            #060708
+        );
+
+    box-shadow:
+        -25px 0 70px
+        rgba(0, 0, 0, 0.52);
+
+    transform:
+        translateX(105%);
+
+    visibility: hidden;
+
+    transition:
+        transform 320ms cubic-bezier(.2, .8, .2, 1),
+        visibility 320ms;
+
+}
+
+
+.cart-sidebar.open {
+
+    transform:
+        translateX(0);
+
+    visibility: visible;
+
+}
+
+
+/* ============================================================
+   32. CART HEADER
+   ============================================================ */
+
+.cart-header {
+
+    min-height: 88px;
+
+    padding:
+        0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.cart-eyebrow {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--lime);
+
+    font-size: 0.64rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.11em;
+
+}
+
+
+.cart-header h2 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 1.35rem;
+
+}
+
+
+.cart-close {
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 50%;
+
+    background:
+        var(--surface-3);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition),
+        border-color var(--transition),
+        background var(--transition),
+        transform var(--transition);
+
+}
+
+
+.cart-close:hover {
+
+    transform:
+        rotate(6deg);
+
+    border-color: var(--lime);
+
+    background:
+        rgba(215, 255, 0, 0.05);
+
+    color: var(--lime);
+
+}
+
+
+/* ============================================================
+   33. CART ITEMS
+   ============================================================ */
+
+.cart-items {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    padding:
+        18px 20px;
+
+}
+
+
+.cart-items::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+.cart-items::-webkit-scrollbar-thumb {
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+}
+
+
+/* ============================================================
+   34. EMPTY CART
+   ============================================================ */
+
+.empty-cart {
+
+    min-height: 360px;
+
+    padding:
+        30px 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.empty-cart-icon {
+
+    width: 82px;
+    height: 82px;
+
+    margin-bottom: 18px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid var(--lime-border);
+
+    border-radius: 50%;
+
+    background:
+        rgba(215, 255, 0, 0.055);
+
+    font-size: 2rem;
+
+}
+
+
+.empty-cart h3 {
+
+    margin:
+        0 0 8px;
+
+    color: white;
+
+    font-size: 1.1rem;
+
+}
+
+
+.empty-cart p {
+
+    max-width: 260px;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.86rem;
+
+    line-height: 1.6;
+
+}
+
+
+/* ============================================================
+   35. CART ITEM DINÁMICO
+   ============================================================ */
+
+.cart-item {
+
+    padding:
+        15px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        78px minmax(0, 1fr);
+
+    gap: 14px;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.cart-item-image {
+
+    width: 78px;
+    height: 78px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 13px;
+
+    background:
+        var(--surface-2);
+
+}
+
+
+.cart-item-image img {
+
+    width: 100%;
+    height: 100%;
+
+    padding: 6px;
+
+    object-fit: contain;
+
+}
+
+
+.cart-item-info {
+
+    min-width: 0;
+
+}
+
+
+.cart-item-brand {
+
+    display: block;
+
+    color: var(--blue);
+
+    font-size: 0.62rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+
+}
+
+
+.cart-item-info h4 {
+
+    margin:
+        3px 0 5px;
+
+    overflow: hidden;
+
+    color: white;
+
+    font-size: 0.9rem;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.cart-item-info strong {
+
+    color: var(--lime);
+
+    font-size: 0.88rem;
+
+}
+
+
+.cart-item-controls {
+
+    margin-top: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.cart-item-controls button {
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 8px;
+
+    background:
+        var(--surface-3);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        border-color var(--transition),
+        color var(--transition),
+        background var(--transition);
+
+}
+
+
+.cart-item-controls button:hover {
+
+    border-color: var(--lime);
+
+    color: var(--lime);
+
+}
+
+
+.cart-item-controls span {
+
+    min-width: 22px;
+
+    text-align: center;
+
+    font-size: 0.83rem;
+
+    font-weight: 850;
+
+}
+
+
+.cart-remove {
+
+    margin-left: auto;
+
+}
+
+
+.cart-remove:hover {
+
+    border-color:
+        rgba(255, 87, 87, 0.45)
+        !important;
+
+    color:
+        var(--danger)
+        !important;
+
+}
+
+
+/* ============================================================
+   36. CART FOOTER
+   ============================================================ */
+
+.cart-footer {
+
+    padding:
+        20px;
+
+    border-top:
+        1px solid var(--line);
+
+    background:
+        rgba(4, 5, 6, 0.96);
+
+}
+
+
+.cart-total {
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.cart-total span {
+
+    color: var(--muted);
+
+    font-size: 0.73rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.cart-total strong {
+
+    color: var(--lime);
+
+    font-size: 1.45rem;
+
+    font-weight: 950;
+
+}
+
+
+.cart-checkout {
+
+    width: 100%;
+
+}
+
+
+/* ============================================================
+   37. CART OVERLAY
+   ============================================================ */
+
+.cart-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 120;
+
+    background:
+        rgba(0, 0, 0, 0.70);
+
+    backdrop-filter:
+        blur(4px);
+
+    -webkit-backdrop-filter:
+        blur(4px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 250ms ease,
+        visibility 250ms ease;
+
+}
+
+
+.cart-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* ============================================================
+   38. WHATSAPP FLOTANTE
+   ============================================================ */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 100;
+
+    min-height: 56px;
+
+    padding:
+        0 19px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background:
+        var(--whatsapp);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 18px 48px
+        rgba(37, 211, 102, 0.28);
+
+    font-weight: 900;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.floating-whatsapp:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.01);
+
+    background:
+        var(--whatsapp-hover);
+
+    box-shadow:
+        0 24px 58px
+        rgba(37, 211, 102, 0.36);
+
+}
+
+
+.floating-whatsapp svg {
+
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+
+}
+
+
+.floating-whatsapp-text {
+
+    font-size: 0.82rem;
+
+    font-weight: 900;
+
+}
+
+
+/* ============================================================
+   39. FOOTER CORPORATIVO
+   ============================================================ */
+
+.footer {
+
+    position: relative;
+
+    padding:
+        72px 0 26px;
+
+    border-top:
+        1px solid var(--line);
+
+    background:
+        linear-gradient(
+            180deg,
+            #08090c 0%,
+            #040405 100%
+        );
+
+}
+
+
+/* ============================================================
+   40. FOOTER GRID
+   ============================================================ */
+
+.footer-main {
+
+    display: grid;
+
+    grid-template-columns:
+        1.45fr
+        0.72fr
+        1fr
+        1.28fr;
+
+    gap:
+        clamp(
+            35px,
+            4vw,
+            62px
+        );
+
+}
+
+
+/* ============================================================
+   41. FOOTER MARCA
+   ============================================================ */
+
+.footer-logo-wrap {
+
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.footer-logo {
+
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 14px;
+
+    object-fit: cover;
+
+    box-shadow:
+        0 10px 28px
+        rgba(0, 0, 0, 0.28);
+
+}
+
+
+.footer-brand-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.1;
+
+}
+
+
+.footer-brand-info strong {
+
+    color: white;
+
+    font-size: 1.03rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.03em;
+
+}
+
+
+.footer-brand-info span {
+
+    margin-top: 6px;
+
+    color: var(--lime);
+
+    font-size: 0.64rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.075em;
+
+}
+
+
+.footer-description {
+
+    max-width: 360px;
+
+    margin:
+        20px 0 0;
+
+    color: #91959e;
+
+    font-size: 0.86rem;
+
+    line-height: 1.72;
+
+}
+
+
+.footer-slogan {
+
+    margin-top: 19px;
+
+    color: #e2e4e7;
+
+    font-size: 0.84rem;
+
+    font-weight: 780;
+
+}
+
+
+/* ============================================================
+   42. FOOTER COLUMNAS
+   ============================================================ */
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.footer-title {
+
+    margin-bottom: 20px;
+
+    color: #f3f4f6;
+
+    font-size: 0.68rem;
+
+    font-weight: 950;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+/* ============================================================
+   43. FOOTER LINKS
+   ============================================================ */
+
+.footer-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+}
+
+
+.footer-links a {
+
+    position: relative;
+
+    color: #8f949e;
+
+    font-size: 0.85rem;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+
+}
+
+
+.footer-links a:hover {
+
+    transform:
+        translateX(3px);
+
+    color: var(--lime);
+
+}
+
+
+/* ============================================================
+   44. FOOTER SERVICIOS
+   ============================================================ */
+
+.footer-service {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+
+.footer-service-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #999da6;
+
+    font-size: 0.84rem;
+
+}
+
+
+.footer-service-icon {
+
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(215, 255, 0, 0.07);
+
+    color: var(--lime);
+
+    font-size: 0.66rem;
+
+    font-weight: 950;
+
+}
+
+
+/* ============================================================
+   45. FOOTER +18
+   ============================================================ */
+
+.footer-age-box {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+}
+
+
+.footer-age {
+
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 13px;
+
+    background: var(--lime);
+
+    color: #050505;
+
+    font-size: 0.94rem;
+
+    font-weight: 950;
+
+    box-shadow:
+        0 12px 28px
+        rgba(215, 255, 0, 0.10);
+
+}
+
+
+.footer-age-box strong {
+
+    display: block;
+
+    color: #e4e6e9;
+
+    font-size: 0.83rem;
+
+    line-height: 1.4;
+
+}
+
+
+.footer-age-box p {
+
+    margin:
+        6px 0 0;
+
+    color: #858a94;
+
+    font-size: 0.77rem;
+
+    line-height: 1.56;
+
+}
+
+
+.footer-warning {
+
+    margin:
+        16px 0 0;
+
+    color: #626771;
+
+    font-size: 0.69rem;
+
+    line-height: 1.5;
+
+}
+
+
+/* ============================================================
+   46. FOOTER DIVIDER
+   ============================================================ */
+
+.footer-divider {
+
+    width: 100%;
+    height: 1px;
+
+    margin:
+        52px 0 22px;
+
+    background:
+        var(--line);
+
+}
+
+
+/* ============================================================
+   47. FOOTER INFERIOR
+   ============================================================ */
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.footer-copyright {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #747984;
+
+    font-size: 0.73rem;
+
+}
+
+
+.footer-copyright span {
+
+    color: #c9cbd0;
+
+    font-weight: 750;
+
+}
+
+
+.footer-copyright small {
+
+    font-size: inherit;
+
+}
+
+
+/* ============================================================
+   48. FOOTER LEGAL
+   ============================================================ */
+
+.footer-legal {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+}
+
+
+.footer-legal-link {
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #737882;
+
+    cursor: pointer;
+
+    font-size: 0.71rem;
+
+    transition:
+        color var(--transition);
+
+}
+
+
+.footer-legal-link:hover {
+
+    color: var(--lime);
+
+}
+
+
+.footer-dot {
+
+    color: #40444b;
+
+}
+
+
+/* ============================================================
+   49. FOOTER STATUS
+   ============================================================ */
+
+.footer-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #858a94;
+
+    font-size: 0.72rem;
+
+    white-space: nowrap;
+
+}
+
+
+.footer-status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--lime);
+
+    box-shadow:
+        0 0 12px
+        rgba(215, 255, 0, 0.65);
+
+}
+
+
+/* ============================================================
+   50. TOAST
+   ============================================================ */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+    bottom: 26px;
+
+    z-index: 180;
+
+    max-width:
+        min(
+            420px,
+            calc(100vw - 30px)
+        );
+
+    padding:
+        13px 17px;
+
+    border:
+        1px solid var(--line-strong);
+
+    border-radius: 12px;
+
+    background:
+        rgba(20, 22, 28, 0.97);
+
+    color: white;
+
+    box-shadow:
+        var(--shadow-md);
+
+    text-align: center;
+
+    font-size: 0.82rem;
+
+    font-weight: 800;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, 18px);
+
+    transition:
+        opacity 230ms ease,
+        transform 230ms ease,
+        visibility 230ms ease;
+
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+/* ============================================================
+   51. DESKTOP MEDIANO
+   ============================================================ */
+
+@media (max-width: 1180px) {
+
+    .nav-links {
+
+        gap: 18px;
+
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns:
+            minmax(0, 1.04fr)
+            minmax(360px, 0.96fr);
+
+        gap: 42px;
+
+    }
+
+
+    .home-menu-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .footer-main {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        row-gap: 46px;
+
+    }
+
+}
+
+
+/* ============================================================
+   52. TABLET / HEADER MOBILE
+   ============================================================ */
+
+@media (max-width: 940px) {
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+
+    .mobile-menu-button {
+
+        display: block;
+
+    }
+
+
+    .hero-grid {
+
+        min-height: auto;
+
+        padding:
+            64px 0 74px;
+
+        grid-template-columns: 1fr;
+
+        gap: 48px;
+
+    }
+
+
+    .hero-content {
+
+        max-width: 780px;
+
+    }
+
+
+    .hero h1 {
+
+        max-width: 850px;
+
+        font-size:
+            clamp(
+                4rem,
+                10vw,
+                6rem
+            );
+
+    }
+
+
+    .hero-visual {
+
+        max-width: 680px;
+
+        margin-inline: auto;
+
+    }
+
+
+    .hero-logo-card {
+
+        border-radius: 24px;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+/* ============================================================
+   53. TABLET PEQUEÑA
+   ============================================================ */
+
+@media (max-width: 760px) {
+
+    .container {
+
+        width:
+            min(
+                var(--container),
+                calc(100% - 32px)
+            );
+
+    }
+
+
+    .topbar-content {
+
+        gap: 7px;
+
+        font-size: 0.67rem;
+
+    }
+
+
+    .hero {
+
+        text-align: left;
+
+    }
+
+
+    .hero-points {
+
+        gap: 12px 16px;
+
+    }
+
+
+    .home-menu {
+
+        padding:
+            75px 0 82px;
+
+    }
+
+
+    .footer {
+
+        padding-top: 58px;
+
+    }
+
+}
+
+
+/* ============================================================
+   54. CELULAR
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+    .container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    /* TOPBAR */
+
+    .topbar {
+
+        min-height: 30px;
+
+        padding:
+            6px 8px;
+
+    }
+
+
+    .topbar-content {
+
+        font-size: 0.63rem;
+
+        line-height: 1.25;
+
+    }
+
+
+    .topbar-content
+    span:nth-child(3),
+    .topbar-content
+    span:nth-child(4),
+    .topbar-content
+    span:nth-child(5) {
+
+        display: none;
+
+    }
+
+
+    /* HEADER */
+
+    .nav {
+
+        min-height: 66px;
+
+        gap: 8px;
+
+    }
+
+
+    .brand {
+
+        min-width: 0;
+
+    }
+
+
+    .brand-text strong {
+
+        font-size: 0.86rem;
+
+    }
+
+
+    .brand-text small {
+
+        font-size: 0.54rem;
+
+    }
+
+
+    /* CARRITO HEADER */
+
+    .header-cart {
+
+        width: 44px;
+        height: 44px;
+
+        min-height: 44px;
+
+        padding: 0;
+
+    }
+
+
+    .cart-text {
+
+        display: none;
+
+    }
+
+
+    .cart-count {
+
+        position: absolute;
+
+        top: -5px;
+        right: -5px;
+
+        min-width: 20px;
+        height: 20px;
+
+        border:
+            2px solid var(--bg);
+
+    }
+
+
+    /* MOBILE MENU */
+
+    .mobile-menu a {
+
+        padding:
+            15px 18px;
+
+    }
+
+
+    /* HERO */
+
+    .hero-grid {
+
+        padding:
+            46px 0 58px;
+
+        gap: 38px;
+
+    }
+
+
+    .hero-badge {
+
+        padding:
+            8px 11px;
+
+        font-size: 0.64rem;
+
+    }
+
+
+    .hero h1 {
+
+        margin-top: 20px;
+
+        font-size:
+            clamp(
+                3.15rem,
+                15.2vw,
+                4.6rem
+            );
+
+        line-height: 0.91;
+
+        letter-spacing: -0.058em;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 0.93rem;
+
+        line-height: 1.68;
+
+    }
+
+
+    .hero-actions {
+
+        margin-top: 25px;
+
+    }
+
+
+    .hero-actions
+    .btn {
+
+        width: 100%;
+
+    }
+
+
+    .hero-points {
+
+        margin-top: 23px;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .hero-point {
+
+        font-size: 0.79rem;
+
+    }
+
+
+    .hero-logo-card {
+
+        border-radius: 19px;
+
+    }
+
+
+    /* HOME MENU */
+
+    .home-menu {
+
+        padding:
+            64px 0 72px;
+
+    }
+
+
+    .home-menu-heading {
+
+        margin-bottom: 32px;
+
+    }
+
+
+    .home-menu-heading h2 {
+
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                3rem
+            );
+
+    }
+
+
+    .home-menu-heading p {
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .home-menu-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .home-menu-card {
+
+        min-height: 205px;
+
+        padding: 23px;
+
+        border-radius: 19px;
+
+    }
+
+
+    .home-menu-icon {
+
+        width: 64px;
+        height: 64px;
+
+        font-size: 1.55rem;
+
+    }
+
+
+    .home-menu-card h3 {
+
+        margin-top: 20px;
+
+    }
+
+
+    /* MODAL */
+
+    .age-modal {
+
+        padding: 14px;
+
+    }
+
+
+    .age-box {
+
+        padding:
+            30px 20px 24px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .age-badge {
+
+        width: 65px;
+        height: 65px;
+
+        font-size: 1.3rem;
+
+    }
+
+
+    .age-buttons {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* CART */
+
+    .cart-sidebar {
+
+        width: 100%;
+
+    }
+
+
+    .cart-header {
+
+        min-height: 78px;
+
+        padding:
+            0 17px;
+
+    }
+
+
+    .cart-items {
+
+        padding:
+            15px 16px;
+
+    }
+
+
+    .cart-footer {
+
+        padding: 16px;
+
+    }
+
+
+    /* WHATSAPP */
+
+    .floating-whatsapp {
+
+        right: 14px;
+        bottom: 14px;
+
+        width: 56px;
+        height: 56px;
+
+        min-height: 56px;
+
+        padding: 0;
+
+    }
+
+
+    .floating-whatsapp-text {
+
+        display: none;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+
+        padding:
+            52px 0 22px;
+
+    }
+
+
+    .footer-main {
+
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+
+    }
+
+
+    .footer-description {
+
+        max-width: 100%;
+
+    }
+
+
+    .footer-divider {
+
+        margin:
+            40px 0 20px;
+
+    }
+
+
+    .footer-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+    }
+
+
+    .footer-copyright {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+
+    }
+
+
+    .footer-legal {
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .footer-status {
+
+        white-space: normal;
+
+    }
+
+
+    /* TOAST */
+
+    .toast {
+
+        bottom: 82px;
+
+    }
+
+}
+
+
+/* ============================================================
+   55. CELULAR PEQUEÑO
+   ============================================================ */
+
+@media (max-width: 430px) {
+
+    .brand-text small {
+
+        display: none;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                2.9rem,
+                14.8vw,
+                3.8rem
+            );
+
+    }
+
+
+    .hero-points {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .home-menu-card {
+
+        min-height: 195px;
+
+    }
+
+
+    .footer-logo {
+
+        width: 52px;
+        height: 52px;
+
+    }
+
+
+    .footer-brand-info strong {
+
+        font-size: 0.92rem;
+
+    }
+
+
+    .footer-brand-info span {
+
+        font-size: 0.58rem;
+
+    }
+
+}
+
+
+/* ============================================================
+   56. PANTALLAS MUY PEQUEÑAS
+   ============================================================ */
+
+@media (max-width: 350px) {
+
+    .container {
+
+        width:
+            calc(100% - 18px);
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 2.65rem;
+
+    }
+
+
+    .brand-text strong {
+
+        font-size: 0.78rem;
+
+    }
+
+
+    .mobile-menu-button,
+    .header-cart {
+
+        width: 40px;
+        height: 40px;
+
+        min-height: 40px;
+
+    }
+
+}
+
+
+/* ============================================================
+   57. MOTION REDUCIDO / ACCESIBILIDAD
+   ============================================================ */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+
+    .hero-content,
+    .hero-visual,
+    .home-menu-card {
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+}
+
+
+/* ============================================================
+   58. DISPOSITIVOS SIN HOVER
+   ============================================================ */
+
+@media (
+    hover: none
+) {
+
+    .home-menu-card:hover,
+    .hero-logo-card:hover,
+    .btn:hover,
+    .header-cart:hover,
+    .floating-whatsapp:hover {
+
+        transform: none;
+
+    }
+
+}

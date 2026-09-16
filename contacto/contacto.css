@@ -1,0 +1,1830 @@
+/* ============================================================
+   ESTACIÓN 180
+   CONTACTO.CSS
+   ============================================================ */
+
+
+/* ============================================================
+   01. PÁGINA
+   ============================================================ */
+
+.contact-page {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        var(--bg);
+
+}
+
+
+
+/* ============================================================
+   02. HERO CONTACTO
+   ============================================================ */
+
+.contact-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid var(--line);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 5, 5, 0.15),
+            rgba(5, 5, 5, 0.96)
+        );
+
+    isolation: isolate;
+
+}
+
+
+
+/* ============================================================
+   03. LUCES DEL HERO
+   ============================================================ */
+
+.contact-glow {
+
+    position: absolute;
+
+    z-index: -1;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter:
+        blur(125px);
+
+    pointer-events: none;
+
+}
+
+
+.contact-glow-blue {
+
+    top: -170px;
+    left: -180px;
+
+    background:
+        rgba(23, 105, 255, 0.24);
+
+}
+
+
+.contact-glow-lime {
+
+    right: -200px;
+    bottom: -210px;
+
+    background:
+        rgba(215, 255, 0, 0.14);
+
+}
+
+
+
+/* ============================================================
+   04. CONTENIDO HERO
+   ============================================================ */
+
+.contact-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        95px 0 105px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(24px);
+
+    transition:
+        opacity 700ms ease,
+        transform 700ms ease;
+
+}
+
+
+.contact-hero-content.contact-visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* ============================================================
+   05. TÍTULO HERO
+   ============================================================ */
+
+.contact-hero h1 {
+
+    max-width: 900px;
+
+    margin:
+        12px auto 22px;
+
+    color: white;
+
+    font-size:
+        clamp(
+            3.7rem,
+            7vw,
+            6.8rem
+        );
+
+    font-weight: 950;
+
+    line-height: 0.93;
+
+    letter-spacing:
+        -0.06em;
+
+    text-wrap: balance;
+
+}
+
+
+.contact-hero h1 span {
+
+    display: inline;
+
+    color: var(--lime);
+
+    text-shadow:
+        0 0 35px
+        rgba(215, 255, 0, 0.12);
+
+}
+
+
+
+/* ============================================================
+   06. DESCRIPCIÓN HERO
+   ============================================================ */
+
+.contact-hero-content > p {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    color:
+        #aeb2bb;
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+
+/* ============================================================
+   07. BOTONES HERO
+   ============================================================ */
+
+.contact-hero-actions {
+
+    margin-top:
+        31px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+
+
+/* ============================================================
+   08. SECCIÓN CANALES
+   ============================================================ */
+
+.contact-channels {
+
+    position: relative;
+
+    padding:
+        100px 0 110px;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(23, 105, 255, 0.07),
+            transparent 30rem
+        ),
+
+        linear-gradient(
+            180deg,
+            #050505,
+            #08090c
+        );
+
+}
+
+
+
+/* ============================================================
+   09. ENCABEZADO DE SECCIÓN
+   ============================================================ */
+
+.contact-heading {
+
+    max-width: 720px;
+
+    margin:
+        0 auto 52px;
+
+    text-align: center;
+
+}
+
+
+.contact-heading h2 {
+
+    margin:
+        0;
+
+    color: white;
+
+    font-size:
+        clamp(
+            2.4rem,
+            4.5vw,
+            4.2rem
+        );
+
+    font-weight: 930;
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -0.045em;
+
+}
+
+
+.contact-heading p {
+
+    max-width: 540px;
+
+    margin:
+        15px auto 0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.96rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* ============================================================
+   10. GRID DE CONTACTO
+   ============================================================ */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        20px;
+
+}
+
+
+
+/* ============================================================
+   11. TARJETA CONTACTO
+   ============================================================ */
+
+.contact-card {
+
+    position: relative;
+
+    min-height:
+        390px;
+
+    padding:
+        31px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        24px;
+
+    background:
+
+        linear-gradient(
+            160deg,
+            rgba(18, 20, 27, 0.97),
+            rgba(8, 9, 12, 0.99)
+        );
+
+    box-shadow:
+        0 18px 50px
+        rgba(0, 0, 0, 0.20);
+
+    opacity: 0;
+
+    transform:
+        translateY(24px);
+
+    transition:
+
+        opacity 550ms ease,
+
+        transform 550ms ease,
+
+        border-color
+        var(--transition),
+
+        box-shadow
+        var(--transition);
+
+}
+
+
+
+/* ============================================================
+   12. EFECTO SUPERIOR
+   ============================================================ */
+
+.contact-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(215, 255, 0, 0.07),
+            transparent 43%
+        );
+
+    opacity:
+        0;
+
+    transition:
+        opacity
+        var(--transition);
+
+}
+
+
+
+/* ============================================================
+   13. TARJETA PRINCIPAL
+   ============================================================ */
+
+.contact-card-primary {
+
+    border-color:
+        rgba(215, 255, 0, 0.22);
+
+    background:
+
+        linear-gradient(
+            155deg,
+            rgba(215, 255, 0, 0.055),
+            rgba(13, 15, 20, 0.98) 45%,
+            rgba(7, 8, 11, 1)
+        );
+
+}
+
+
+
+/* ============================================================
+   14. TARJETAS VISIBLES
+   ============================================================ */
+
+.contact-card.contact-visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* ============================================================
+   15. HOVER TARJETA
+   ============================================================ */
+
+.contact-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(215, 255, 0, 0.34);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0, 0, 0, 0.34);
+
+}
+
+
+.contact-card:hover::before {
+
+    opacity:
+        1;
+
+}
+
+
+
+/* ============================================================
+   16. ICONO TARJETA
+   ============================================================ */
+
+.contact-card-icon {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    margin-bottom:
+        24px;
+
+    flex-shrink:
+        0;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        var(--lime-border);
+
+    border-radius:
+        18px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(215, 255, 0, 0.10),
+            rgba(23, 105, 255, 0.055)
+        );
+
+    color:
+        var(--lime);
+
+    font-size:
+        1.65rem;
+
+    transition:
+
+        background
+        var(--transition),
+
+        color
+        var(--transition),
+
+        transform
+        var(--transition),
+
+        border-color
+        var(--transition);
+
+}
+
+
+.contact-card-icon svg {
+
+    width:
+        31px;
+
+    height:
+        31px;
+
+}
+
+
+.contact-card:hover
+.contact-card-icon {
+
+    transform:
+        scale(1.05);
+
+    border-color:
+        var(--lime);
+
+    background:
+        var(--lime);
+
+    color:
+        #050505;
+
+}
+
+
+
+/* ============================================================
+   17. ETIQUETA
+   ============================================================ */
+
+.contact-card-label {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    color:
+        var(--lime);
+
+    font-size:
+        0.66rem;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        0.11em;
+
+}
+
+
+
+/* ============================================================
+   18. TÍTULO TARJETA
+   ============================================================ */
+
+.contact-card h3 {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    margin:
+        8px 0 11px;
+
+    color:
+        white;
+
+    font-size:
+        1.45rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.025em;
+
+}
+
+
+
+/* ============================================================
+   19. DESCRIPCIÓN TARJETA
+   ============================================================ */
+
+.contact-card p {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    margin:
+        0;
+
+    color:
+        #9398a2;
+
+    font-size:
+        0.88rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* ============================================================
+   20. VALOR TARJETA
+   ============================================================ */
+
+.contact-card-value {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    display:
+        block;
+
+    margin-top:
+        auto;
+
+    padding-top:
+        25px;
+
+    color:
+        #e9ebee;
+
+    font-size:
+        0.94rem;
+
+    font-weight:
+        850;
+
+}
+
+
+
+/* ============================================================
+   21. BOTÓN INTERNO WHATSAPP
+   ============================================================ */
+
+.contact-card-button {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    margin-top:
+        18px;
+
+    padding:
+        12px 15px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    border:
+        1px solid
+        rgba(37, 211, 102, 0.26);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(37, 211, 102, 0.075);
+
+    color:
+        #6ff19d;
+
+    cursor:
+        pointer;
+
+    font-size:
+        0.82rem;
+
+    font-weight:
+        900;
+
+    transition:
+
+        background
+        var(--transition),
+
+        color
+        var(--transition),
+
+        border-color
+        var(--transition),
+
+        transform
+        var(--transition);
+
+}
+
+
+.contact-card-button span {
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.contact-card-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--whatsapp);
+
+    background:
+        var(--whatsapp);
+
+    color:
+        white;
+
+}
+
+
+
+/* ============================================================
+   22. SECCIÓN AYUDA
+   ============================================================ */
+
+.contact-help {
+
+    padding:
+        20px 0 110px;
+
+    background:
+        #08090c;
+
+}
+
+
+
+/* ============================================================
+   23. CAJA AYUDA
+   ============================================================ */
+
+.contact-help-box {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        55px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(350px, 0.95fr);
+
+    align-items:
+        center;
+
+    gap:
+        70px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:
+        28px;
+
+    background:
+
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(23, 105, 255, 0.10),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            145deg,
+            #101219,
+            #08090d
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.26);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 650ms ease,
+        transform 650ms ease;
+
+}
+
+
+.contact-help-box.contact-visible {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* ============================================================
+   24. TEXTO AYUDA
+   ============================================================ */
+
+.contact-help-content h2 {
+
+    margin:
+        4px 0 16px;
+
+    color:
+        white;
+
+    font-size:
+        clamp(
+            2.3rem,
+            4vw,
+            4rem
+        );
+
+    font-weight:
+        920;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.045em;
+
+}
+
+
+.contact-help-content p {
+
+    max-width:
+        580px;
+
+    margin:
+        0 0 28px;
+
+    color:
+        #999ea8;
+
+    font-size:
+        0.94rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+
+/* ============================================================
+   25. PASOS
+   ============================================================ */
+
+.contact-help-steps {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+}
+
+
+
+/* ============================================================
+   26. PASO
+   ============================================================ */
+
+.contact-help-step {
+
+    min-height:
+        118px;
+
+    padding:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    transition:
+
+        border-color
+        var(--transition),
+
+        background
+        var(--transition),
+
+        transform
+        var(--transition);
+
+}
+
+
+.contact-help-step:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(215, 255, 0, 0.24);
+
+    background:
+        rgba(215, 255, 0, 0.035);
+
+}
+
+
+
+/* ============================================================
+   27. NÚMERO PASO
+   ============================================================ */
+
+.contact-help-number {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    flex-shrink:
+        0;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--lime);
+
+    color:
+        #050505;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        950;
+
+}
+
+
+
+/* ============================================================
+   28. TEXTO PASO
+   ============================================================ */
+
+.contact-help-step strong {
+
+    display:
+        block;
+
+    color:
+        white;
+
+    font-size:
+        0.91rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.contact-help-step p {
+
+    margin:
+        5px 0 0;
+
+    color:
+        #777c86;
+
+    font-size:
+        0.77rem;
+
+    line-height:
+        1.45;
+
+}
+
+
+
+/* ============================================================
+   29. CTA FINAL
+   ============================================================ */
+
+.contact-final {
+
+    padding:
+        0 0 110px;
+
+    background:
+        #08090c;
+
+}
+
+
+
+/* ============================================================
+   30. TARJETA FINAL
+   ============================================================ */
+
+.contact-final-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        410px;
+
+    padding:
+        70px 50px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        rgba(215, 255, 0, 0.18);
+
+    border-radius:
+        30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(215, 255, 0, 0.045),
+            rgba(23, 105, 255, 0.045)
+        ),
+
+        #090b0f;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 28px 80px
+        rgba(0, 0, 0, 0.28);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 650ms ease,
+        transform 650ms ease;
+
+}
+
+
+.contact-final-card.contact-visible {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* ============================================================
+   31. RESPLANDOR FINAL
+   ============================================================ */
+
+.contact-final-glow {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        500px;
+
+    height:
+        280px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(215, 255, 0, 0.07);
+
+    filter:
+        blur(100px);
+
+    pointer-events:
+        none;
+
+}
+
+
+
+/* ============================================================
+   32. CONTENIDO FINAL
+   ============================================================ */
+
+.contact-final-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        760px;
+
+}
+
+
+.contact-final-content h2 {
+
+    margin:
+        5px 0 17px;
+
+    color:
+        white;
+
+    font-size:
+        clamp(
+            2.7rem,
+            5.5vw,
+            5.3rem
+        );
+
+    font-weight:
+        950;
+
+    line-height:
+        0.96;
+
+    letter-spacing:
+        -0.055em;
+
+}
+
+
+.contact-final-content h2 span {
+
+    color:
+        var(--lime);
+
+}
+
+
+.contact-final-content p {
+
+    max-width:
+        550px;
+
+    margin:
+        0 auto 28px;
+
+    color:
+        #9ba0aa;
+
+    font-size:
+        0.94rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* ============================================================
+   33. TABLET
+   ============================================================ */
+
+@media (
+    max-width: 1000px
+) {
+
+    .contact-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .contact-card-primary {
+
+        grid-column:
+            span 2;
+
+    }
+
+
+    .contact-help-box {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            45px;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   34. TABLET PEQUEÑA
+   ============================================================ */
+
+@media (
+    max-width: 760px
+) {
+
+    .contact-hero {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .contact-hero-content {
+
+        padding:
+            75px 0 82px;
+
+    }
+
+
+    .contact-channels {
+
+        padding:
+            78px 0 85px;
+
+    }
+
+
+    .contact-heading {
+
+        margin-bottom:
+            38px;
+
+    }
+
+
+    .contact-help {
+
+        padding-bottom:
+            85px;
+
+    }
+
+
+    .contact-help-box {
+
+        padding:
+            38px 30px;
+
+    }
+
+
+    .contact-final {
+
+        padding-bottom:
+            85px;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   35. CELULAR
+   ============================================================ */
+
+@media (
+    max-width: 640px
+) {
+
+    /* ========================================================
+       HERO
+    ======================================================== */
+
+    .contact-hero-content {
+
+        padding:
+            58px 0 65px;
+
+    }
+
+
+    .contact-hero h1 {
+
+        margin-top:
+            10px;
+
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                4.3rem
+            );
+
+        line-height:
+            0.94;
+
+    }
+
+
+    .contact-hero-content > p {
+
+        font-size:
+            0.91rem;
+
+        line-height:
+            1.68;
+
+    }
+
+
+    .contact-hero-actions {
+
+        margin-top:
+            26px;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .contact-hero-actions
+    .btn {
+
+        width:
+            100%;
+
+    }
+
+
+
+    /* ========================================================
+       CANALES
+    ======================================================== */
+
+    .contact-channels {
+
+        padding:
+            64px 0 72px;
+
+    }
+
+
+    .contact-heading {
+
+        margin-bottom:
+            30px;
+
+    }
+
+
+    .contact-heading h2 {
+
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                3rem
+            );
+
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+
+    }
+
+
+    .contact-card-primary {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .contact-card {
+
+        min-height:
+            340px;
+
+        padding:
+            25px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .contact-card-icon {
+
+        width:
+            61px;
+
+        height:
+            61px;
+
+        margin-bottom:
+            20px;
+
+        border-radius:
+            16px;
+
+        font-size:
+            1.45rem;
+
+    }
+
+
+    .contact-card-icon svg {
+
+        width:
+            28px;
+
+        height:
+            28px;
+
+    }
+
+
+    .contact-card h3 {
+
+        font-size:
+            1.3rem;
+
+    }
+
+
+
+    /* ========================================================
+       AYUDA
+    ======================================================== */
+
+    .contact-help {
+
+        padding:
+            0 0 72px;
+
+    }
+
+
+    .contact-help-box {
+
+        padding:
+            30px 22px;
+
+        gap:
+            34px;
+
+        border-radius:
+            21px;
+
+    }
+
+
+    .contact-help-content h2 {
+
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                3rem
+            );
+
+    }
+
+
+    .contact-help-content
+    .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .contact-help-steps {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .contact-help-step {
+
+        min-height:
+            95px;
+
+    }
+
+
+
+    /* ========================================================
+       FINAL
+    ======================================================== */
+
+    .contact-final {
+
+        padding-bottom:
+            72px;
+
+    }
+
+
+    .contact-final-card {
+
+        min-height:
+            360px;
+
+        padding:
+            50px 22px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    .contact-final-content h2 {
+
+        font-size:
+            clamp(
+                2.4rem,
+                12vw,
+                3.8rem
+            );
+
+    }
+
+
+    .contact-final-content
+    .btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   36. CELULAR PEQUEÑO
+   ============================================================ */
+
+@media (
+    max-width: 430px
+) {
+
+    .contact-hero h1 {
+
+        font-size:
+            clamp(
+                2.75rem,
+                13.5vw,
+                3.6rem
+            );
+
+    }
+
+
+    .contact-card {
+
+        min-height:
+            325px;
+
+        padding:
+            22px;
+
+    }
+
+
+    .contact-help-box {
+
+        padding:
+            27px 18px;
+
+    }
+
+
+    .contact-help-number {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+    }
+
+
+    .contact-final-card {
+
+        padding:
+            45px 18px;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   37. MOTION REDUCIDO
+   ============================================================ */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    .contact-hero-content,
+    .contact-card,
+    .contact-help-box,
+    .contact-final-card {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   38. DISPOSITIVOS SIN HOVER
+   ============================================================ */
+
+@media (
+    hover: none
+) {
+
+    .contact-card:hover,
+    .contact-help-step:hover,
+    .contact-card-button:hover {
+
+        transform:
+            none;
+
+    }
+
+}

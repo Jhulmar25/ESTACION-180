@@ -1,0 +1,2582 @@
+/* ============================================================
+   ESTACIÓN 180
+   PRODUCTOS.CSS
+   ============================================================ */
+
+
+/* ============================================================
+   01. PÁGINA GENERAL
+   ============================================================ */
+
+.products-page {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #07080b 50%,
+            #050505 100%
+        );
+
+}
+
+
+
+/* ============================================================
+   02. HERO
+   ============================================================ */
+
+.products-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(23, 105, 255, 0.11),
+            transparent 30rem
+        ),
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(215, 255, 0, 0.07),
+            transparent 30rem
+        ),
+        #050505;
+
+}
+
+
+
+/* ============================================================
+   03. GLOWS
+   ============================================================ */
+
+.products-glow {
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    filter: blur(115px);
+
+    opacity: 0.18;
+
+    pointer-events: none;
+
+}
+
+
+.products-glow-blue {
+
+    left: -160px;
+    top: -110px;
+
+    background:
+        var(--blue);
+
+}
+
+
+.products-glow-lime {
+
+    right: -170px;
+    top: -100px;
+
+    background:
+        var(--lime);
+
+}
+
+
+
+/* ============================================================
+   04. HERO CONTENT
+   ============================================================ */
+
+.products-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 420px;
+
+    padding:
+        84px 0 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+}
+
+
+
+/* ============================================================
+   05. KICKER
+   ============================================================ */
+
+.products-kicker {
+
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color:
+        var(--lime);
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        0.12em;
+
+}
+
+
+
+/* ============================================================
+   06. HERO TITLE
+   ============================================================ */
+
+.products-hero h1 {
+
+    max-width: 850px;
+
+    margin:
+        0 0 22px;
+
+    color:
+        white;
+
+    font-size:
+        clamp(
+            3.4rem,
+            7vw,
+            6.6rem
+        );
+
+    font-weight:
+        950;
+
+    line-height:
+        0.93;
+
+    letter-spacing:
+        -0.055em;
+
+}
+
+
+.products-hero h1 span {
+
+    display: block;
+
+    color:
+        var(--lime);
+
+    text-shadow:
+        0 0 35px
+        rgba(215, 255, 0, 0.10);
+
+}
+
+
+
+/* ============================================================
+   07. HERO TEXTO
+   ============================================================ */
+
+.products-hero-content > p {
+
+    max-width: 700px;
+
+    margin: 0;
+
+    color:
+        #b8bcc4;
+
+    font-size:
+        clamp(
+            0.98rem,
+            1.2vw,
+            1.08rem
+        );
+
+    line-height:
+        1.75;
+
+}
+
+
+
+/* ============================================================
+   08. HERO INFO
+   ============================================================ */
+
+.products-hero-info {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap:
+        12px 24px;
+
+}
+
+
+.products-hero-info-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        #d5d7dc;
+
+    font-size:
+        0.87rem;
+
+    font-weight:
+        760;
+
+}
+
+
+.products-hero-info-item span {
+
+    width: 21px;
+    height: 21px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(215, 255, 0, 0.08);
+
+    color:
+        var(--lime);
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        950;
+
+}
+
+
+
+/* ============================================================
+   09. CATÁLOGO
+   ============================================================ */
+
+.products-section {
+
+    position: relative;
+
+    padding:
+        72px 0 100px;
+
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(23, 105, 255, 0.07),
+            transparent 30rem
+        ),
+        linear-gradient(
+            180deg,
+            #060708,
+            #090a0d
+        );
+
+}
+
+
+
+/* ============================================================
+   10. VISTAS
+   ============================================================ */
+
+.catalog-view[hidden] {
+
+    display: none !important;
+
+}
+
+
+
+/* ============================================================
+   11. BREADCRUMB
+   ============================================================ */
+
+.catalog-breadcrumb {
+
+    min-height: 34px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        850;
+
+}
+
+
+.breadcrumb-item {
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        #8b9099;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    transition:
+        color 200ms ease;
+
+}
+
+
+.breadcrumb-item:hover {
+
+    color:
+        white;
+
+}
+
+
+.breadcrumb-item.active {
+
+    color:
+        var(--lime);
+
+}
+
+
+.breadcrumb-separator {
+
+    color:
+        #454a52;
+
+}
+
+
+.breadcrumb-current {
+
+    color:
+        white;
+
+}
+
+
+
+/* ============================================================
+   12. CABECERA
+   ============================================================ */
+
+.products-heading {
+
+    margin-bottom: 34px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.products-heading h2 {
+
+    margin:
+        0 0 10px;
+
+    color:
+        white;
+
+    font-size:
+        clamp(
+            2.2rem,
+            4.4vw,
+            4rem
+        );
+
+    font-weight:
+        950;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.045em;
+
+}
+
+
+.products-heading p {
+
+    max-width: 620px;
+
+    margin: 0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.95rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* ============================================================
+   13. CONTADOR
+   ============================================================ */
+
+.products-counter {
+
+    min-width: 150px;
+
+    padding:
+        13px 17px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.73rem;
+
+    font-weight:
+        850;
+
+}
+
+
+.products-counter span {
+
+    color:
+        var(--lime);
+
+    font-size:
+        1.4rem;
+
+    font-weight:
+        950;
+
+}
+
+
+
+/* ============================================================
+   14. BOTÓN VOLVER
+   ============================================================ */
+
+.catalog-back-button {
+
+    margin-bottom: 28px;
+
+    padding:
+        11px 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color:
+        #d6d9df;
+
+    cursor: pointer;
+
+    font-family:
+        inherit;
+
+    font-size:
+        0.8rem;
+
+    font-weight:
+        900;
+
+    transition:
+        transform 200ms ease,
+        color 200ms ease,
+        border-color 200ms ease,
+        background 200ms ease;
+
+}
+
+
+.catalog-back-button:hover {
+
+    transform:
+        translateX(-3px);
+
+    color:
+        var(--lime);
+
+    border-color:
+        rgba(215, 255, 0, 0.30);
+
+    background:
+        rgba(215, 255, 0, 0.045);
+
+}
+
+
+
+/* ============================================================
+   15. GRID CATEGORÍAS
+   ============================================================ */
+
+.category-cards-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 24px;
+
+}
+
+
+
+/* ============================================================
+   16. TARJETA CATEGORÍA
+   ============================================================ */
+
+.catalog-category-card {
+
+    position: relative;
+
+    min-height: 350px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        24px;
+
+    background:
+        #090a0d;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 18px 48px
+        rgba(0, 0, 0, 0.28);
+
+    isolation: isolate;
+
+    transition:
+        transform 250ms ease,
+        border-color 250ms ease,
+        box-shadow 250ms ease;
+
+}
+
+
+.catalog-category-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(215, 255, 0, 0.34);
+
+    box-shadow:
+        0 28px 65px
+        rgba(0, 0, 0, 0.40);
+
+}
+
+
+
+/* ============================================================
+   17. IMAGEN CATEGORÍA
+   ============================================================ */
+
+.catalog-category-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+}
+
+
+.catalog-category-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 550ms
+        cubic-bezier(.2, .7, .2, 1),
+
+        filter 300ms ease;
+
+}
+
+
+.catalog-category-card:hover
+.catalog-category-image img {
+
+    transform:
+        scale(1.055);
+
+    filter:
+        brightness(1.08);
+
+}
+
+
+
+/* ============================================================
+   18. OVERLAY
+   ============================================================ */
+
+.catalog-card-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.18) 38%,
+            rgba(0, 0, 0, 0.95) 100%
+        );
+
+}
+
+
+
+/* ============================================================
+   19. ICONO CATEGORÍA
+   ============================================================ */
+
+.catalog-category-icon {
+
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 3;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-radius: 15px;
+
+    background:
+        rgba(5, 5, 5, 0.70);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    font-size:
+        1.35rem;
+
+}
+
+
+
+/* ============================================================
+   20. CONTENIDO CATEGORÍA
+   ============================================================ */
+
+.catalog-category-content {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 3;
+
+    padding:
+        26px 82px 26px 26px;
+
+}
+
+
+.catalog-card-label {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--lime);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        0.12em;
+
+}
+
+
+.catalog-category-content h3 {
+
+    margin:
+        0 0 8px;
+
+    color:
+        white;
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            2.65rem
+        );
+
+    font-weight:
+        950;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.04em;
+
+}
+
+
+.catalog-category-content p {
+
+    margin: 0;
+
+    color:
+        #b8bbc2;
+
+    font-size:
+        0.83rem;
+
+}
+
+
+
+/* ============================================================
+   21. FLECHA
+   ============================================================ */
+
+.catalog-card-arrow {
+
+    position: absolute;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 4;
+
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--lime);
+
+    color:
+        #050505;
+
+    font-size:
+        1.22rem;
+
+    font-weight:
+        950;
+
+    box-shadow:
+        0 8px 24px
+        rgba(215, 255, 0, 0.16);
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease;
+
+}
+
+
+.catalog-category-card:hover
+.catalog-card-arrow,
+
+.brand-card:hover
+.catalog-card-arrow {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+
+/* ============================================================
+   22. GRID MARCAS
+   ============================================================ */
+
+.brand-cards-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 22px;
+
+}
+
+
+
+/* ============================================================
+   23. TARJETA MARCA
+   ============================================================ */
+
+.brand-card {
+
+    position: relative;
+
+    min-height: 300px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        22px;
+
+    background:
+        #090a0d;
+
+    cursor: pointer;
+
+    isolation: isolate;
+
+    box-shadow:
+        0 16px 42px
+        rgba(0, 0, 0, 0.24);
+
+    transition:
+        transform 240ms ease,
+        border-color 240ms ease,
+        box-shadow 240ms ease;
+
+}
+
+
+.brand-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(215, 255, 0, 0.32);
+
+    box-shadow:
+        0 26px 60px
+        rgba(0, 0, 0, 0.36);
+
+}
+
+
+
+/* ============================================================
+   24. IMAGEN MARCA
+   ============================================================ */
+
+.brand-card-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+}
+
+
+.brand-card-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 500ms
+        cubic-bezier(.2, .7, .2, 1),
+
+        filter 300ms ease;
+
+}
+
+
+.brand-card:hover
+.brand-card-image img {
+
+    transform:
+        scale(1.055);
+
+    filter:
+        brightness(1.06);
+
+}
+
+
+
+/* ============================================================
+   25. CONTENIDO MARCA
+   ============================================================ */
+
+.brand-card-content {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 3;
+
+    padding:
+        24px 74px 24px 24px;
+
+}
+
+
+.brand-card-content h3 {
+
+    margin:
+        0 0 7px;
+
+    color:
+        white;
+
+    font-size:
+        1.55rem;
+
+    font-weight:
+        950;
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -0.035em;
+
+}
+
+
+.brand-card-content p {
+
+    margin: 0;
+
+    color:
+        #afb3bc;
+
+    font-size:
+        0.78rem;
+
+}
+
+
+
+/* ============================================================
+   26. BUSCADOR
+   ============================================================ */
+
+.products-tools {
+
+    margin-bottom: 30px;
+
+}
+
+
+.products-search {
+
+    position: relative;
+
+    max-width: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    transition:
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        background 220ms ease;
+
+}
+
+
+.products-search:focus-within {
+
+    border-color:
+        rgba(215, 255, 0, 0.42);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(215, 255, 0, 0.05);
+
+}
+
+
+.products-search-icon {
+
+    padding-left: 17px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        1rem;
+
+}
+
+
+.products-search input {
+
+    width: 100%;
+
+    min-height: 54px;
+
+    padding:
+        0 48px 0 12px;
+
+    border: 0;
+
+    outline: 0;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+    font-size:
+        0.92rem;
+
+}
+
+
+.products-search input::placeholder {
+
+    color:
+        #737983;
+
+}
+
+
+.products-search-clear {
+
+    position: absolute;
+
+    right: 10px;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        transparent;
+
+    color:
+        var(--muted);
+
+    cursor: pointer;
+
+    font-size:
+        0.8rem;
+
+    transition:
+        background 220ms ease,
+        color 220ms ease;
+
+}
+
+
+.products-search-clear:hover {
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        white;
+
+}
+
+
+
+/* ============================================================
+   27. GRID PRODUCTOS
+   ============================================================ */
+
+.products-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 24px;
+
+}
+
+
+
+/* ============================================================
+   28. TARJETA PRODUCTO
+   ============================================================ */
+
+.product-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            165deg,
+            #111319,
+            #08090d
+        );
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.24);
+
+    opacity: 0;
+
+    transform:
+        translateY(22px);
+
+    transition:
+        opacity 420ms ease,
+        transform 420ms ease,
+        border-color 240ms ease,
+        box-shadow 240ms ease;
+
+}
+
+
+.product-card.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.product-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(215, 255, 0, 0.30);
+
+    box-shadow:
+        0 28px 65px
+        rgba(0, 0, 0, 0.38);
+
+}
+
+
+
+/* ============================================================
+   29. IMAGEN PRODUCTO
+   ============================================================ */
+
+.product-image-wrapper {
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    aspect-ratio:
+        1 / 1.05;
+
+    background:
+        linear-gradient(
+            145deg,
+            #121419,
+            #060709
+        );
+
+}
+
+
+.product-image {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    padding: 14px;
+
+    transition:
+        transform 500ms
+        cubic-bezier(.2, .7, .2, 1),
+
+        filter 300ms ease;
+
+}
+
+
+.product-card:hover
+.product-image {
+
+    transform:
+        scale(1.055);
+
+    filter:
+        brightness(1.06);
+
+}
+
+
+.product-image-wrapper::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 25%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(0, 0, 0, 0.28)
+        );
+
+    pointer-events: none;
+
+}
+
+
+
+/* ============================================================
+   30. BADGE PRODUCTO
+   ============================================================ */
+
+.product-category-badge {
+
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+
+    z-index: 3;
+
+    padding:
+        6px 9px;
+
+    border:
+        1px solid
+        rgba(215, 255, 0, 0.25);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(5, 5, 5, 0.78);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    color:
+        var(--lime);
+
+    font-size:
+        0.58rem;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        0.09em;
+
+}
+
+
+
+/* ============================================================
+   31. CONTENIDO PRODUCTO
+   ============================================================ */
+
+.product-content {
+
+    flex: 1;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+
+.product-info {
+
+    flex: 1;
+
+}
+
+
+.product-code {
+
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--lime);
+
+    font-size:
+        0.61rem;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        0.085em;
+
+}
+
+
+.product-info h3 {
+
+    margin:
+        0 0 5px;
+
+    color:
+        white;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        900;
+
+    line-height:
+        1.28;
+
+}
+
+
+.product-brand {
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.76rem;
+
+}
+
+
+
+/* ============================================================
+   32. PRECIO
+   ============================================================ */
+
+.product-price-row {
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.product-price-row > div {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+}
+
+
+.product-price-label {
+
+    display: block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.61rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.10em;
+
+}
+
+
+.product-price-row strong {
+
+    color:
+        var(--lime);
+
+    font-size:
+        1.4rem;
+
+    font-weight:
+        950;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.03em;
+
+}
+
+
+
+/* ============================================================
+   33. BOTÓN AGREGAR
+   ============================================================ */
+
+.product-add-cart {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding:
+        11px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    border: 0;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--lime);
+
+    color:
+        #050505;
+
+    cursor: pointer;
+
+    font-family:
+        inherit;
+
+    font-size:
+        0.80rem;
+
+    font-weight:
+        950;
+
+    box-shadow:
+        0 12px 28px
+        rgba(215, 255, 0, 0.10);
+
+    transition:
+        transform 220ms ease,
+        filter 220ms ease,
+        box-shadow 220ms ease;
+
+}
+
+
+.product-add-cart:hover {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.06);
+
+    box-shadow:
+        0 16px 34px
+        rgba(215, 255, 0, 0.17);
+
+}
+
+
+.product-add-cart:active {
+
+    transform:
+        scale(0.985);
+
+}
+
+
+.product-add-cart.added {
+
+    background:
+        var(--whatsapp);
+
+    color:
+        white;
+
+}
+
+
+
+/* ============================================================
+   34. SIN PRODUCTOS
+   ============================================================ */
+
+.products-empty {
+
+    padding:
+        70px 20px;
+
+    text-align: center;
+
+}
+
+
+.products-empty[hidden] {
+
+    display: none !important;
+
+}
+
+
+.products-empty-icon {
+
+    margin-bottom: 14px;
+
+    font-size:
+        2.4rem;
+
+}
+
+
+.products-empty h3 {
+
+    margin:
+        0 0 8px;
+
+    color:
+        white;
+
+    font-size:
+        1.45rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.products-empty p {
+
+    max-width: 420px;
+
+    margin:
+        0 auto 20px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.6;
+
+}
+
+
+
+/* ============================================================
+   35. AVISO +18
+   ============================================================ */
+
+.products-notice {
+
+    padding:
+        0 0 90px;
+
+    background:
+        #090a0d;
+
+}
+
+
+.products-notice-box {
+
+    padding:
+        22px 24px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215, 255, 0, 0.035),
+            rgba(23, 105, 255, 0.025)
+        );
+
+}
+
+
+.products-notice-icon {
+
+    min-width: 44px;
+    height: 44px;
+
+    padding:
+        0 7px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(215, 255, 0, 0.25);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(215, 255, 0, 0.07);
+
+    color:
+        var(--lime);
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        950;
+
+}
+
+
+.products-notice-box strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color:
+        white;
+
+    font-size:
+        0.90rem;
+
+}
+
+
+.products-notice-box p {
+
+    margin: 0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.81rem;
+
+    line-height:
+        1.58;
+
+}
+
+
+
+/* ============================================================
+   36. FOCUS
+   ============================================================ */
+
+.catalog-category-card:focus-visible,
+.brand-card:focus-visible,
+.catalog-back-button:focus-visible,
+.breadcrumb-item:focus-visible,
+.product-add-cart:focus-visible,
+.products-search-clear:focus-visible {
+
+    outline:
+        3px solid
+        rgba(215, 255, 0, 0.48);
+
+    outline-offset:
+        4px;
+
+}
+
+
+
+/* ============================================================
+   37. DESKTOP MEDIANO
+   ============================================================ */
+
+@media (max-width: 1180px) {
+
+    .category-cards-grid {
+
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .brand-cards-grid {
+
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .products-grid {
+
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+
+/* ============================================================
+   38. TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .products-hero-content {
+
+        min-height:
+            360px;
+
+        padding:
+            68px 0;
+
+    }
+
+
+    .products-heading {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .products-counter {
+
+        min-width:
+            0;
+
+    }
+
+
+    .category-cards-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .brand-cards-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .products-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+
+/* ============================================================
+   39. CELULAR
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+    .products-hero-content {
+
+        min-height:
+            auto;
+
+        padding:
+            54px 0 58px;
+
+    }
+
+
+    .products-kicker {
+
+        font-size:
+            0.66rem;
+
+    }
+
+
+    .products-hero h1 {
+
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                4.3rem
+            );
+
+    }
+
+
+    .products-hero-content > p {
+
+        font-size:
+            0.92rem;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    .products-hero-info {
+
+        margin-top:
+            22px;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .products-section {
+
+        padding:
+            48px 0 70px;
+
+    }
+
+
+    .catalog-breadcrumb {
+
+        margin-bottom:
+            24px;
+
+        font-size:
+            0.73rem;
+
+    }
+
+
+    .products-heading {
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    .products-heading h2 {
+
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                3rem
+            );
+
+    }
+
+
+    .products-search {
+
+        max-width:
+            100%;
+
+    }
+
+
+
+    /* ========================================================
+       CATEGORÍAS
+       2 COLUMNAS
+    ======================================================== */
+
+    .category-cards-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 12px;
+
+    }
+
+
+    .catalog-category-card {
+
+        min-height:
+            240px;
+
+        border-radius:
+            17px;
+
+    }
+
+
+    .catalog-category-content {
+
+        padding:
+            17px 54px 17px 17px;
+
+    }
+
+
+    .catalog-category-content h3 {
+
+        font-size:
+            1.35rem;
+
+    }
+
+
+    .catalog-category-content p {
+
+        font-size:
+            0.69rem;
+
+    }
+
+
+    .catalog-category-icon {
+
+        top: 12px;
+        right: 12px;
+
+        width: 39px;
+        height: 39px;
+
+        border-radius:
+            12px;
+
+        font-size:
+            1.05rem;
+
+    }
+
+
+    .catalog-card-arrow {
+
+        width: 36px;
+        height: 36px;
+
+        right: 14px;
+        bottom: 14px;
+
+        font-size:
+            1rem;
+
+    }
+
+
+
+    /* ========================================================
+       MARCAS
+       2 COLUMNAS
+    ======================================================== */
+
+    .brand-cards-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 12px;
+
+    }
+
+
+    .brand-card {
+
+        min-height:
+            230px;
+
+        border-radius:
+            17px;
+
+    }
+
+
+    .brand-card-content {
+
+        padding:
+            17px 50px 17px 17px;
+
+    }
+
+
+    .brand-card-content h3 {
+
+        font-size:
+            1.2rem;
+
+    }
+
+
+    .brand-card-content p {
+
+        font-size:
+            0.68rem;
+
+    }
+
+
+
+    /* ========================================================
+       PRODUCTOS
+       1 COLUMNA
+    ======================================================== */
+
+    .products-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            22px;
+
+    }
+
+
+    .product-card {
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .product-image-wrapper {
+
+        aspect-ratio:
+            1 / 0.95;
+
+    }
+
+
+    .product-image {
+
+        padding:
+            18px;
+
+    }
+
+
+    .product-content {
+
+        padding:
+            19px;
+
+    }
+
+
+    .products-notice {
+
+        padding-bottom:
+            70px;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   40. CELULAR PEQUEÑO
+   ============================================================ */
+
+@media (max-width: 420px) {
+
+    .products-hero h1 {
+
+        font-size:
+            clamp(
+                2.7rem,
+                13vw,
+                3.6rem
+            );
+
+    }
+
+
+    .category-cards-grid {
+
+        gap:
+            10px;
+
+    }
+
+
+    .catalog-category-card {
+
+        min-height:
+            215px;
+
+    }
+
+
+    .catalog-category-content {
+
+        padding:
+            14px 48px 14px 14px;
+
+    }
+
+
+    .catalog-card-label {
+
+        font-size:
+            0.54rem;
+
+    }
+
+
+    .catalog-category-content h3 {
+
+        font-size:
+            1.16rem;
+
+    }
+
+
+    .catalog-category-content p {
+
+        display:
+            none;
+
+    }
+
+
+    .brand-cards-grid {
+
+        gap:
+            10px;
+
+    }
+
+
+    .brand-card {
+
+        min-height:
+            205px;
+
+    }
+
+
+    .brand-card-content {
+
+        padding:
+            14px 46px 14px 14px;
+
+    }
+
+
+    .brand-card-content h3 {
+
+        font-size:
+            1.05rem;
+
+    }
+
+
+    .brand-card-content p {
+
+        display:
+            none;
+
+    }
+
+
+    .product-content {
+
+        padding:
+            17px;
+
+    }
+
+
+    .product-price-row strong {
+
+        font-size:
+            1.32rem;
+
+    }
+
+
+    .product-add-cart {
+
+        min-height:
+            46px;
+
+    }
+
+
+    .products-notice-box {
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   41. SIN HOVER
+   ============================================================ */
+
+@media (hover: none) {
+
+    .catalog-category-card:hover,
+    .brand-card:hover,
+    .product-card:hover {
+
+        transform:
+            none;
+
+    }
+
+
+    .catalog-category-card:hover
+    .catalog-category-image img,
+
+    .brand-card:hover
+    .brand-card-image img,
+
+    .product-card:hover
+    .product-image {
+
+        transform:
+            none;
+
+        filter:
+            none;
+
+    }
+
+
+    .catalog-category-card:hover
+    .catalog-card-arrow,
+
+    .brand-card:hover
+    .catalog-card-arrow {
+
+        transform:
+            none;
+
+    }
+
+
+    .product-add-cart:hover {
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   42. REDUCIR MOVIMIENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .catalog-category-card,
+    .catalog-category-image img,
+    .brand-card,
+    .brand-card-image img,
+    .product-card,
+    .product-image,
+    .product-add-cart,
+    .catalog-card-arrow,
+    .catalog-back-button {
+
+        transition:
+            none !important;
+
+    }
+
+
+    .product-card {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+    }
+
+}

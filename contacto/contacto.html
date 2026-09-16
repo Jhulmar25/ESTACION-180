@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contacta con Estación 180. Atención y delivery 24/7. Realiza consultas y pedidos directamente por WhatsApp."
+    >
+
+    <meta
+        name="theme-color"
+        content="#050505"
+    >
+
+    <title>
+        Contacto | Estación 180
+    </title>
+
+
+    <!-- =====================================================
+         CSS GLOBAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../styles.css"
+    >
+
+
+    <!-- =====================================================
+         CSS CONTACTO
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="contacto.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         VALIDACIÓN DE EDAD
+    ====================================================== -->
+
+    <div
+        class="age-modal"
+        id="ageModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ageTitle"
+    >
+
+        <div class="age-box">
+
+
+            <div class="age-badge">
+                +18
+            </div>
+
+
+            <span class="age-label">
+                ACCESO RESTRINGIDO
+            </span>
+
+
+            <h2 id="ageTitle">
+                ¿Eres mayor de edad?
+            </h2>
+
+
+            <div class="age-buttons">
+
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="confirmAge"
+                >
+                    Sí, soy mayor de 18
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="denyAge"
+                >
+                    No
+                </button>
+
+
+            </div>
+
+
+            <small class="age-warning">
+                Tomar bebidas alcohólicas en exceso
+                es dañino para la salud.
+            </small>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+
+    <div class="topbar">
+
+        <div class="topbar-content">
+
+            <span>
+                🕐 DELIVERY DE LICORES 24/7
+            </span>
+
+            <span class="topbar-divider">
+                •
+            </span>
+
+            <span>
+                PEDIDOS RÁPIDOS Y SEGUROS
+            </span>
+
+            <span class="topbar-divider">
+                •
+            </span>
+
+            <span>
+                EXCLUSIVO PARA MAYORES DE 18 AÑOS
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="header"
+        id="header"
+    >
+
+        <div class="container nav">
+
+
+            <!-- =================================================
+                 MARCA
+            ================================================== -->
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="Estación 180 - Inicio"
+            >
+
+                <div class="brand-text">
+
+                    <strong>
+                        ESTACIÓN 180
+                    </strong>
+
+                    <small>
+                        LICORERÍA · DELIVERY 24/7
+                    </small>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 NAVEGACIÓN DESKTOP
+            ================================================== -->
+
+            <nav
+                class="nav-links"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="../index.html"
+                    data-page="inicio"
+                >
+                    Inicio
+                </a>
+
+
+                <a
+                    href="../productos/productos.html"
+                    data-page="productos"
+                >
+                    Productos
+                </a>
+
+
+                <a
+                    href="../promociones/promociones.html"
+                    data-page="promociones"
+                >
+                    Promociones
+                </a>
+
+
+                <a
+                    href="../como-pedir/pedir.html"
+                    data-page="como-pedir"
+                >
+                    Cómo pedir
+                </a>
+
+
+                <a
+                    href="contacto.html"
+                    class="active"
+                    data-page="contacto"
+                >
+                    Contacto
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- =================================================
+                 ACCIONES HEADER
+            ================================================== -->
+
+            <div class="nav-actions">
+
+
+                <!-- CARRITO -->
+
+                <button
+                    type="button"
+                    class="header-cart"
+                    id="cartButton"
+                    aria-label="Abrir carrito"
+                >
+
+                    <span class="cart-icon">
+                        🛒
+                    </span>
+
+
+                    <span class="cart-text">
+                        Mi pedido
+                    </span>
+
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+
+                </button>
+
+
+
+                <!-- MENÚ MÓVIL -->
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MENÚ MÓVIL
+        ================================================== -->
+
+        <nav
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Menú móvil"
+        >
+
+            <a
+                href="../index.html"
+                data-page="inicio"
+            >
+                Inicio
+            </a>
+
+
+            <a
+                href="../productos/productos.html"
+                data-page="productos"
+            >
+                Productos
+            </a>
+
+
+            <a
+                href="../promociones/promociones.html"
+                data-page="promociones"
+            >
+                Promociones
+            </a>
+
+
+            <a
+                href="../como-pedir/pedir.html"
+                data-page="como-pedir"
+            >
+                Cómo pedir
+            </a>
+
+
+            <a
+                href="contacto.html"
+                class="active"
+                data-page="contacto"
+            >
+                Contacto
+            </a>
+
+
+        </nav>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO CONTACTO
+    ====================================================== -->
+
+    <main class="contact-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="contact-hero">
+
+
+            <div
+                class="contact-glow contact-glow-blue"
+            ></div>
+
+
+            <div
+                class="contact-glow contact-glow-lime"
+            ></div>
+
+
+
+            <div class="container contact-hero-content">
+
+
+                <span class="section-kicker">
+                    ESTACIÓN 180
+                </span>
+
+
+                <h1>
+
+                    Estamos para
+
+                    <span>
+                        atenderte.
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    ¿Tienes una consulta o quieres realizar
+                    un pedido?
+
+                    Comunícate directamente con nosotros.
+                    Estamos disponibles las 24 horas.
+
+                </p>
+
+
+
+                <div class="contact-hero-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary btn-large"
+                        id="contactWhatsappHero"
+                    >
+
+                        Hablar por WhatsApp
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <a
+                        href="../productos/productos.html"
+                        class="btn btn-secondary btn-large"
+                    >
+
+                        Ver productos
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CANALES DE CONTACTO
+        ================================================== -->
+
+        <section class="contact-channels">
+
+
+            <div class="container">
+
+
+                <div class="contact-heading">
+
+
+                    <span class="section-kicker">
+                        CONTACTO
+                    </span>
+
+
+                    <h2>
+                        ¿Cómo podemos ayudarte?
+                    </h2>
+
+
+                    <p>
+
+                        Elige el medio que prefieras
+                        para comunicarte con Estación 180.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="contact-grid">
+
+
+                    <!-- =====================================
+                         WHATSAPP
+                    ====================================== -->
+
+                    <article
+                        class="contact-card contact-card-primary"
+                    >
+
+
+                        <div class="contact-card-icon">
+
+                            <svg
+                                viewBox="0 0 32 32"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    fill="currentColor"
+                                    d="M19.11 17.33c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"
+                                />
+
+                                <path
+                                    fill="currentColor"
+                                    d="M16.03 3C8.84 3 3 8.75 3 15.84c0 2.26.6 4.47 1.74 6.41L3 29l6.95-1.8a13.14 13.14 0 0 0 6.07 1.48h.01C23.21 28.68 29 22.92 29 15.84S23.21 3 16.03 3zm0 23.51h-.01a10.98 10.98 0 0 1-5.59-1.52l-.4-.24-4.12 1.07 1.1-4-.26-.41a10.66 10.66 0 0 1-1.67-5.73c0-5.9 4.91-10.7 10.95-10.7s10.94 4.8 10.94 10.7-4.91 10.83-10.94 10.83z"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <span class="contact-card-label">
+                            ATENCIÓN DIRECTA
+                        </span>
+
+
+                        <h3>
+                            WhatsApp
+                        </h3>
+
+
+                        <p>
+
+                            Realiza consultas, confirma
+                            disponibilidad o coordina tu pedido
+                            directamente con nosotros.
+
+                        </p>
+
+
+                        <strong class="contact-card-value">
+                            +51 999 014 976
+                        </strong>
+
+
+                        <button
+                            type="button"
+                            class="contact-card-button"
+                            id="contactWhatsappCard"
+                        >
+
+                            Escribir por WhatsApp
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </article>
+
+
+
+                    <!-- =====================================
+                         HORARIO
+                    ====================================== -->
+
+                    <article class="contact-card">
+
+
+                        <div class="contact-card-icon">
+                            🕐
+                        </div>
+
+
+                        <span class="contact-card-label">
+                            DISPONIBILIDAD
+                        </span>
+
+
+                        <h3>
+                            Atención 24/7
+                        </h3>
+
+
+                        <p>
+
+                            Puedes comunicarte con nosotros
+                            cualquier día de la semana para
+                            realizar consultas o pedidos.
+
+                        </p>
+
+
+                        <strong class="contact-card-value">
+                            24 horas · 7 días
+                        </strong>
+
+
+                    </article>
+
+
+
+                    <!-- =====================================
+                         DELIVERY
+                    ====================================== -->
+
+                    <article class="contact-card">
+
+
+                        <div class="contact-card-icon">
+                            🛵
+                        </div>
+
+
+                        <span class="contact-card-label">
+                            DELIVERY
+                        </span>
+
+
+                        <h3>
+                            Envíanos tu ubicación
+                        </h3>
+
+
+                        <p>
+
+                            Comparte tu ubicación por WhatsApp
+                            para verificar cobertura, disponibilidad
+                            y costo del delivery.
+
+                        </p>
+
+
+                        <strong class="contact-card-value">
+                            Coordinación directa
+                        </strong>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             AYUDA
+        ================================================== -->
+
+        <section class="contact-help">
+
+
+            <div class="container">
+
+
+                <div class="contact-help-box">
+
+
+                    <div class="contact-help-content">
+
+
+                        <span class="section-kicker">
+                            ANTES DE ESCRIBIRNOS
+                        </span>
+
+
+                        <h2>
+                            Ten tu pedido listo.
+                        </h2>
+
+
+                        <p>
+
+                            Puedes seleccionar previamente tus
+                            productos desde nuestro catálogo.
+
+                            Cuando presiones “Continuar pedido”,
+                            generaremos automáticamente el detalle
+                            para enviarlo por WhatsApp.
+
+                        </p>
+
+
+                        <a
+                            href="../productos/productos.html"
+                            class="btn btn-primary btn-large"
+                        >
+
+                            Ir al catálogo
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         PASOS
+                    ====================================== -->
+
+                    <div class="contact-help-steps">
+
+
+                        <div class="contact-help-step">
+
+
+                            <span class="contact-help-number">
+                                01
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    Elige
+                                </strong>
+
+                                <p>
+                                    Selecciona tus productos.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="contact-help-step">
+
+
+                            <span class="contact-help-number">
+                                02
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    Agrega
+                                </strong>
+
+                                <p>
+                                    Arma tu pedido.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="contact-help-step">
+
+
+                            <span class="contact-help-number">
+                                03
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    Envía
+                                </strong>
+
+                                <p>
+                                    Confirma por WhatsApp.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="contact-help-step">
+
+
+                            <span class="contact-help-number">
+                                04
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    Recibe
+                                </strong>
+
+                                <p>
+                                    Coordinamos el delivery.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA FINAL
+        ================================================== -->
+
+        <section class="contact-final">
+
+
+            <div class="container">
+
+
+                <div class="contact-final-card">
+
+
+                    <div class="contact-final-glow"></div>
+
+
+                    <div class="contact-final-content">
+
+
+                        <span class="section-kicker">
+                            ESTACIÓN 180
+                        </span>
+
+
+                        <h2>
+
+                            Tu pedido está a
+
+                            <span>
+                                un mensaje.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Escríbenos por WhatsApp y nuestro
+                            equipo te ayudará a coordinar tu pedido.
+
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary btn-large"
+                            id="contactWhatsappFinal"
+                        >
+
+                            Contactar ahora
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         CARRITO GLOBAL
+    ====================================================== -->
+
+    <aside
+        class="cart-sidebar"
+        id="cartSidebar"
+        aria-hidden="true"
+    >
+
+
+        <div class="cart-header">
+
+
+            <div>
+
+                <span class="cart-eyebrow">
+                    ESTACIÓN 180
+                </span>
+
+                <h2>
+                    Mi pedido
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="cart-close"
+                id="closeCart"
+                aria-label="Cerrar carrito"
+            >
+                ✕
+            </button>
+
+
+        </div>
+
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+
+            <div class="empty-cart">
+
+
+                <div class="empty-cart-icon">
+                    🛒
+                </div>
+
+
+                <h3>
+                    Tu pedido está vacío
+                </h3>
+
+
+                <p>
+                    Los productos que agregues
+                    aparecerán aquí.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="cart-footer">
+
+
+            <div class="cart-total">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <strong id="cartTotal">
+                    S/ 0.00
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn btn-primary cart-checkout"
+                id="cartCheckout"
+                disabled
+            >
+                Continuar pedido
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         OVERLAY CARRITO
+    ====================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         WHATSAPP FLOTANTE
+    ====================================================== -->
+
+    <button
+        type="button"
+        class="floating-whatsapp"
+        id="floatingWhatsapp"
+        aria-label="Contactar por WhatsApp"
+    >
+
+        <svg
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+        >
+
+            <path
+                fill="currentColor"
+                d="M19.11 17.33c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"
+            />
+
+            <path
+                fill="currentColor"
+                d="M16.03 3C8.84 3 3 8.75 3 15.84c0 2.26.6 4.47 1.74 6.41L3 29l6.95-1.8a13.14 13.14 0 0 0 6.07 1.48h.01C23.21 28.68 29 22.92 29 15.84S23.21 3 16.03 3zm0 23.51h-.01a10.98 10.98 0 0 1-5.59-1.52l-.4-.24-4.12 1.07 1.1-4-.26-.41a10.66 10.66 0 0 1-1.67-5.73c0-5.9 4.91-10.7 10.95-10.7s10.94 4.8 10.94 10.7-4.91 10.83-10.94 10.83z"
+            />
+
+        </svg>
+
+
+        <span class="floating-whatsapp-text">
+            WhatsApp
+        </span>
+
+
+    </button>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="container">
+
+
+            <div class="footer-main">
+
+
+                <!-- MARCA -->
+
+                <div class="footer-brand">
+
+
+                    <a
+                        href="../index.html"
+                        class="footer-logo-wrap"
+                        aria-label="Estación 180 - Inicio"
+                    >
+
+                        <img
+                            src="../imagenes/logo.jpeg"
+                            alt="Logo Estación 180"
+                            class="footer-logo"
+                        >
+
+
+                        <div class="footer-brand-info">
+
+                            <strong>
+                                ESTACIÓN 180
+                            </strong>
+
+                            <span>
+                                LICORERÍA · DELIVERY 24/7
+                            </span>
+
+                        </div>
+
+
+                    </a>
+
+
+
+                    <p class="footer-description">
+
+                        Tu licorería online para encontrar bebidas,
+                        promociones y complementos con atención
+                        rápida y delivery las 24 horas.
+
+                    </p>
+
+
+                    <div class="footer-slogan">
+                        Pide rápido. Recibe fácil. Disfruta más.
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- NAVEGACIÓN -->
+
+                <div class="footer-column">
+
+
+                    <span class="footer-title">
+                        NAVEGACIÓN
+                    </span>
+
+
+                    <nav class="footer-links">
+
+
+                        <a href="../index.html">
+                            Inicio
+                        </a>
+
+
+                        <a href="../productos/productos.html">
+                            Productos
+                        </a>
+
+
+                        <a href="../promociones/promociones.html">
+                            Promociones
+                        </a>
+
+
+                        <a href="../como-pedir/pedir.html">
+                            Cómo pedir
+                        </a>
+
+
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+
+
+                    </nav>
+
+
+                </div>
+
+
+
+                <!-- SERVICIO -->
+
+                <div class="footer-column">
+
+
+                    <span class="footer-title">
+                        NUESTRO SERVICIO
+                    </span>
+
+
+                    <div class="footer-service">
+
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Atención las 24 horas
+                            </span>
+
+                        </div>
+
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Delivery coordinado
+                            </span>
+
+                        </div>
+
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Pedidos rápidos
+                            </span>
+
+                        </div>
+
+
+                        <div class="footer-service-item">
+
+                            <span class="footer-service-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Atención personalizada
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CONSUMO RESPONSABLE -->
+
+                <div class="footer-column footer-responsible">
+
+
+                    <span class="footer-title">
+                        CONSUMO RESPONSABLE
+                    </span>
+
+
+                    <div class="footer-age-box">
+
+
+                        <span class="footer-age">
+                            +18
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Venta exclusiva para adultos
+                            </strong>
+
+                            <p>
+
+                                La venta de bebidas alcohólicas
+                                está dirigida exclusivamente a
+                                personas mayores de 18 años.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <p class="footer-warning">
+
+                        Tomar bebidas alcohólicas en exceso
+                        es dañino para la salud.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DIVISOR
+            ================================================== -->
+
+            <div class="footer-divider"></div>
+
+
+
+            <!-- =================================================
+                 FOOTER INFERIOR
+            ================================================== -->
+
+            <div class="footer-bottom">
+
+
+                <div class="footer-copyright">
+
+                    <span>
+                        © 2026 Estación 180
+                    </span>
+
+                    <small>
+                        Todos los derechos reservados.
+                    </small>
+
+                </div>
+
+
+
+                <div class="footer-legal">
+
+
+                    <button
+                        type="button"
+                        class="footer-legal-link"
+                    >
+                        Términos y condiciones
+                    </button>
+
+
+                    <span class="footer-dot">
+                        •
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="footer-legal-link"
+                    >
+                        Política de privacidad
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="footer-status">
+
+                    <span class="footer-status-dot"></span>
+
+                    Atención disponible 24/7
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <!-- GLOBAL -->
+
+    <script src="../app.js"></script>
+
+
+    <!-- CONTACTO -->
+
+    <script src="contacto.js"></script>
+
+
+</body>
+
+</html>
